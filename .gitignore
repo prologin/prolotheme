@@ -1,0 +1,10 @@
+/node_modules/
+
+# files import with yarn
+static/js/codemirror/
+static/js/jquery.min.js
+static/js/skulpt-stdlib.js
+static/js/skulpt.min.js
+static/js/tex-svg.js
+
+static/css/codemirror/
