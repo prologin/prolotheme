@@ -1,0 +1,32 @@
+---
+
+include:
+  - template: Code-Quality.gitlab-ci.yml
+
+stages:
+  - qa
+  - build
+
+code_quality:
+  stage: qa
+  interruptible: true
+
+lint:shellcheck:
+  stage: qa
+  interruptible: true
+  needs: []
+  image:
+    name: koalaman/shellcheck-alpine
+    entrypoint: [""]
+  script:
+    - shellcheck --format tty $(find -name '*.sh' -type f)
+
+build:
+  stage: build
+  interruptible: true
+  needs: []
+  image:
+    name: "node:18"
+    entrypoint: [""]
+  script:
+    - ./build.sh
