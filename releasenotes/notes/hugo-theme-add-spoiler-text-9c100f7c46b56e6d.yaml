@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Added a shortcode `spoiler` to temporarily hide text.
+
+    Usage
+    ```
+    Not a spoiler {< spoiler >} this is a spoiler {</ spoiler >} not
+    a spoiler anymore
+    ```

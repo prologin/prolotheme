@@ -1,0 +1,13 @@
+.prolo-spoiler {
+  border-radius: 3px;
+  transition: all 300ms ease;
+}
+
+.prolo-spoiler-hidden {
+  background-color: black;
+  cursor: pointer;
+}
+
+.prolo-spoiler-content-hidden {
+  opacity: 0;
+}

@@ -38,14 +38,13 @@ release note:
   script:
     - echo You should write release notes with your changes.
     - exit 1
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      allow_failure: true
-      changes:
-        paths:
-          - releasenotes/**/*
-      # Only run (and fail) if no release notes have been written
-      when: never
+  allow_failure: true
+  only:
+    refs:
+      - merge_requests
+  except:
+    changes:
+      - releasenotes/**/*
 
 release:
   stage: release

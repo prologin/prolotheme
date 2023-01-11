@@ -21,6 +21,19 @@ au début de la partie à mettre dans ce style, et
 
 à la fin.
 
+## Texte en spoiler
+
+On peut mettre du texte en mode "spoiler", c'est à dire qu'il est caché sous
+un bandeau noir tant qu'on ne clique pas dessus (même fonctionnement que les
+spoilers discord). Pour créer un spoiler dans ton TP, il faut utiliser ceci :
+
+```
+{{< spoiler >}} My spoiling content {{< /spoiler >}}
+```
+
+Attention à utiliser des chevrons `<>` au lieu des `%`. Sinon cela ne
+fonctionnera pas.
+
 
 ## Diviser votre TP
 
@@ -39,9 +52,9 @@ Attention à bien laisser au moins une ligne vide avant et après cette balise p
 
 Utilisables via la spécification du langage `code<lang>` dans le type des
 codeblocks, cela permet d'obtenir un codeblock intéractif directement sur le
-navigateur web. 
+navigateur web.
 
-Par exemple pour afficher une console Python : 
+Par exemple pour afficher une console Python :
 ````
 ```codepython
 ````
