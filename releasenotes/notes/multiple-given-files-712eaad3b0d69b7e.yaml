@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add a script that automatically create `.zip` files when there are multiple
+    given files in a subject.

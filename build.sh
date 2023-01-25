@@ -4,6 +4,8 @@ set -xeuo pipefail
 
 yarn install
 
+./compile_resources.sh
+
 mkdir -p static/js/codemirror/mode/
 mkdir -p static/css/codemirror/theme/
 
