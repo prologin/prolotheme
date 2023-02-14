@@ -49,6 +49,8 @@ body {
 
 main {
     margin-bottom: 200px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 table {
