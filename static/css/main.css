@@ -394,52 +394,6 @@ pre code {
     height: 0;
 }
 
-/* exec */
-.exec {
-    background-color: #2e2e2e;
-    max-width: 100%;
-    min-width: 100px;
-    margin-top: 10px;
-    padding-left: 20px;
-    border-radius: 10px;
-    padding: 10px;
-    color: var(--bg-color);
-    margin: 10px;
-    position: relative;
-    place-content: space-between;
-    padding: 10px;
-    color: var(--bg-color);
-}
-
-#yourcode {
-    background-color: var(--bg-codeblock-color);
-    color: var(--bg-color);
-}
-
-.exec-yourcode {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.yourcode-button {
-    background-color: var(--header-color);
-    border-radius: 8px;
-    border-style: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    height: 40px;
-    line-height: 20px;
-    padding: 10px 16px;
-    right: 20px;
-    position: absolute;
-}
-
-.result {
-    color: var(--bg-color);
-    margin: 15px;
-}
-
 /********************/
 /**** responsive ****/
 /********************/

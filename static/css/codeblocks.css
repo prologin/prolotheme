@@ -1,0 +1,45 @@
+/* exec */
+.prolo-codeblock {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    color: var(--bg-color);
+    color: var(--bg-color);
+    margin-top: 10px;
+    margin: 10px;
+    max-width: 100%;
+    min-width: 100px;
+    padding-left: 20px;
+    padding: 10px;
+    padding: 10px;
+    place-content: space-between;
+    position: relative;
+}
+
+#yourcode {
+    background-color: var(--bg-codeblock-color);
+    color: var(--bg-color);
+}
+
+.prolo-codeblock-input-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.prolo-codeblock-run-btn {
+    background-color: var(--header-color);
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 16px;
+    position: absolute;
+    right: 20px;
+}
+
+.prolo-codeblock-result {
+    color: var(--bg-color);
+    margin: 15px;
+}

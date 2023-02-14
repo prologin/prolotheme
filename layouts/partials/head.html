@@ -3,7 +3,8 @@
       {{ .Site.Title }}
     {{ end }}</title>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+    <link type="text/css" rel="stylesheet" href='{{ "css/main.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/codeblocks.css" | absURL }}'>
     {{- partial "favicon.html" . -}}
     <link rel="canonical" href="{{ .Permalink }}">
     <script>

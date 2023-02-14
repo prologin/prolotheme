@@ -1,52 +1,15 @@
-<div class="exec">
+<div class="prolo-codeblock prolo-codehtml">
     Écris ton code ici :
-    <div class="exec-yourcode" style="color: white; display: block">
-        <textarea id="code-html-input-{{.Ordinal}}" cols="90" rows="5">
-{{ .Inner}}</textarea>
-        <button
-            class="yourcode-button"
-            type="button"
-            onclick="runIt(LANGS.HTML, {{.Ordinal}})"
+    <div class="prolo-codeblock-input-box" style="color: white; display: block">
+        <textarea class="prolo-codeblock-input" cols="90" rows="5">
+{{ .Inner}}</textarea
         >
-            Run
-        </button>
+        <button class="prolo-codeblock-run-btn" type="button">Run</button>
         Le résultat :
         <br />
-        <iframe
-            class="result"
-            style="background-color: white; width: 95%; height: 250px"
-            id="code-html-output-{{.Ordinal}}"
-        ></iframe>
     </div>
+    <iframe
+        class="prolo-codeblock-result"
+        style="background-color: white; width: 95%; height: 250px"
+    ></iframe>
 </div>
-
-<script type="text/javascript">
-    {
-        // Code text area
-        const textArea = document.getElementById(
-            "code-html-input-{{.Ordinal}}"
-        );
-        // Codemirror object
-        // Replace previous text area
-        const codemirror = CodeMirror(
-            function (elt) {
-                textArea.parentNode.replaceChild(elt, textArea);
-            },
-            {
-                value: textArea.value,
-                mode: "htmlmixed",
-                lineNumbers: true,
-                tabSize: 4,
-                theme: "monokai",
-            }
-        );
-        const outputArea = document.getElementById(
-            "code-html-output-{{.Ordinal}}"
-        );
-
-        const name = LANGS.HTML + "{{.Ordinal}}";
-        const content = [codemirror, outputArea];
-
-        addBlock(name, content);
-    }
-</script>

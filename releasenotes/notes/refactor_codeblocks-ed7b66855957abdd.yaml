@@ -1,0 +1,6 @@
+---
+upgrade:
+  - |
+    Updated codeblocks implementation. Improvements:
+      - Less code duplication
+      - Easier to add support for a new language
