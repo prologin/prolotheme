@@ -76,3 +76,22 @@ Dans le cas où en ajouter un nouveau serait intéressant, voici les étapes à 
 4. Dans `codeblocks.js`, ajouter un block `(function(){})()` et y définir les
     fonctions `runCode<lang>()` et `initCode<lang>()`. Il faut également
     appliquer `initCode<lang>()` à tous les blocks trouvés dans le document.
+
+## Les vidéos
+
+On peut inclure une vidéo comme ceci :
+
+```
+{{< video src="path/to/video" type="video/type" >}}
+``` 
+
+Les types suivants sont supportés:
+- MP4
+- WebM
+- Ogg
+
+On peut aussi la faire démarrer automatiquement avec l'option 'autoplay'.
+
+```
+{{< video src="path/to/video" type="video/type" autoplay="yes" >}}
+```
