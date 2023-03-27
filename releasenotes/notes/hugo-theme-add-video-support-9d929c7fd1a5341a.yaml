@@ -8,7 +8,7 @@ features:
     {{< video src="path/to/video" type="video/type" autoplay="yes_or_no" >}}
     ```
 
-  Available types
+    Available types
     video/mp4
     video/webm
     video/ogg
