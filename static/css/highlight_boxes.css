@@ -1,0 +1,95 @@
+.highlight_box {
+    padding: 12px;
+    margin-bottom: 24px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 0px;
+    border-top: 10px solid;
+}
+
+.highlight_box :is(h1, h2, h3, h4, h5, h6)  {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.highlight_box .title {
+    margin: -12px;
+    padding-left: 10px;
+    padding-bottom: 8px;
+}
+
+.highlight_box .title::before {
+    margin-right: 10px;
+}
+
+
+/****** EXERCICE ******/
+
+.exercice .title::before {
+    content: "📝";
+}
+
+.exercice .title {
+    background-color: #92e6a7;
+}
+
+.exercice {
+    /* Beige */
+    border-color: #92e6a7;
+    background-color: #d2f6dd;
+}
+
+
+
+/****** INFO ******/
+
+.info .title::before {
+    content: "💡";
+}
+
+.info .title {
+    background-color: #6ab0de;
+}
+
+.info {
+    /* Blue */
+    border-color: #6ab0de;
+    background-color: #e7f2fa;
+}
+
+
+
+/****** WARNING ******/
+
+.warning .title::before {
+    content: "⚠️";
+}
+
+.warning .title {
+    background-color: #f0b37e;
+}
+
+.warning {
+    /* Orange */
+    border-color: #f0b37e;
+    background-color: #ffedcc;
+}
+
+
+
+
+/****** ERROR ******/
+
+.error .title::before {
+    content: "⛔";
+}
+
+.error .title {
+    background-color: #fd8b8b;
+}
+
+.error {
+    /* Red */
+    border-color: #fd8b8b;
+    background-color: #ffcccb;
+}

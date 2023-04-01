@@ -1,25 +1,24 @@
 # Fonctionnalités de ce thème
 
-## Les shortcodes
+## Les boites de mise en valeur
 
-4 différents shortcodes existent :
-- `exemple`
-- `exercice`
-- `info`
-- `cours`
+Il existe différents niveau de box :
+- `info`     (bleue)
+- `warning`  (orange)
+- `error`    (rouge)
+- `exercice` (vert)
 
-Il permettent de différencier les parties du TP. Pour les utiliser, il faut mettre :
+Il est aussi possible d'ajouter un titre à sa box.
+Le paramètre `title` est optionnel.
 
-```
-{{% Insérer_le_nom_du_shortcode %}}
-```
-au début de la partie à mettre dans ce style, et
+Voici comment les utiliser :
 
 ```
-{{% /Insérer_le_nom_du_shortcode %}}
+{{% box type="a type" title="A title" %}}
+> A quote inside a box
+Your text inside the box.
+{{% /box %}}
 ```
-
-à la fin.
 
 ## Texte en spoiler
 

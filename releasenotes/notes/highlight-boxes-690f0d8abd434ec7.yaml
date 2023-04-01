@@ -1,0 +1,48 @@
+---
+features:
+  - |
+    You can now add a title to your highligth boxes by using the parameter 
+    `title` of the shortcode. 
+    
+    Usage
+    ```
+    {{% box type="a type" title="A title" %}}
+    Your text inside the box.
+    {{% /box %}}
+    ```
+upgrade:
+  - |
+    The style of the highligth boxes has been improved. 
+    The way to call those boxes has also changed. You now have to call the 
+    shortcode `box` precising the type of the box you want to create. You can 
+    also add an optional title to the boxes. 
+
+    Usage
+    ```
+    {{% box type="a type" title="A title" %}}
+    Your text inside the box.
+    {{% /box %}}
+    ```
+
+    Types of boxes that are supported
+    - `info`
+    - `warning`
+    - `error`
+    - `exercice`
+deprecations:
+  - |
+    The usage of the shortcodes `info`, `cours`, `exemple` and `exercice` 
+    are deprecated. They have been replaced by a single shortcode named `box`. 
+
+    Usage
+    ```
+    {{% box type="a type" title="A title" %}}
+    Your text inside the box.
+    {{% /box %}}
+    ```
+
+    Types of boxes that are supported
+    - `info`
+    - `warning`
+    - `error`
+    - `exercice`

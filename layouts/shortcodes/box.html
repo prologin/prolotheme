@@ -1,0 +1,10 @@
+<div class="highlight_box {{ .Get "type" }}">
+    {{- if .Get "title" -}}
+    <p class="title">
+    {{- .Get "title" -}}
+    </p>
+    {{- end -}}
+    <p>
+    {{- .Inner | markdownify -}}
+    </p>
+</div>
