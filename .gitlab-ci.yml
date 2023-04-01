@@ -27,7 +27,7 @@ build:
   interruptible: true
   needs: []
   image:
-    name: "node:18"
+    name: "node:19"
     entrypoint: [""]
   script:
     - ./build.sh
