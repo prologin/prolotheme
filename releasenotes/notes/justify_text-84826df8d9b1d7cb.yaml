@@ -1,0 +1,4 @@
+---
+upgrade:
+  - Set the text format to justified.
+  - Increase line spacing.
