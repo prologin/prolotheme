@@ -51,6 +51,7 @@ main {
     margin-bottom: 200px;
     text-align: justify;
     text-justify: inter-word;
+    line-height: 22pt;
 }
 
 table {
