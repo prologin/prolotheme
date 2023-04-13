@@ -1,0 +1,16 @@
+---
+upgrade:
+  - |
+    Add directories in the 'subject' archetype. 
+    When you create a subject with the hugo command, it now also creates the
+    right subdirectories in addition to the `index.md` and `README.md` files. 
+
+    Usage
+    ```
+    hugo new -k subject [subject_type]/[subject_name]
+    ```
+
+    For example
+    ```
+    hugo new -k subject micropython/flappy_bird
+    ```
