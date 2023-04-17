@@ -51,7 +51,6 @@ main {
     margin-bottom: 200px;
     text-align: justify;
     text-justify: inter-word;
-    line-height: 22pt;
 }
 
 table {
@@ -140,6 +139,7 @@ h1.article-title {
     justify-content: flex-start;
     flex-direction: row-reverse;
     margin-left: 50px;
+    line-height: 22pt;
 }
 
 a.code-stub-button {
