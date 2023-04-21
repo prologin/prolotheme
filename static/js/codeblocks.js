@@ -1,5 +1,13 @@
 "use strict";
 
+// Found here: https://github.com/skulpt/skulpt/blob/master/HACKING.md
+function builtinRead(x)
+{
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+        throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+}
+
 function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
     return CodeMirror(
         function (elt) {
