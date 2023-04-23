@@ -1,0 +1,10 @@
+---
+upgrade:
+  - |
+    Refactored the [SECTION-BREAK] navigation arrows to remove the
+    footer banner in the middle of the screen. Buttons are now
+    fixed at the bottom of the page.
+fixes:
+  - |
+    Fix the footer div overflowing on the content, making impossible to
+    click on the content under it.

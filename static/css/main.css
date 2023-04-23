@@ -260,23 +260,36 @@ details[open] summary {
 /********************/
 /****** footer ******/
 /********************/
-.footer {
-    position: sticky;
-    bottom: 45%;
-    width: 100%;
-}
 
-#article-container ~ .footer {
+/* By default, disable section arrows display (when no sections are used) */
+#article-container ~ .section-button {
     display: none;
 }
 
-.fas {
-    color: black;
+.section-button {
+    border-radius: 10%;
+    background-color: #DDDDDD;
+
+    position: fixed;
+    bottom: 40px;
+
+    cursor: pointer;
+
+    width: 56px;
+    height: 56px;
+}
+.section-button.prev-button {
+    left: clamp(40px, calc(50% - 500px), 50%);
+}
+.section-button.next-button {
+    right: clamp(40px, calc(50% - 500px), 50%);
 }
 
-.footer-element {
-    display: flex;
-    justify-content: space-between;
+.section-button svg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .footer-list {
@@ -299,6 +312,8 @@ details[open] summary {
     width: 100%;
 }
 
+/* Colors for the "loading bar" that show the advancement at the top
+ * the page */
 .started {
     background-color: var(--header-color);
 }
