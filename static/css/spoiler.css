@@ -1,10 +1,12 @@
 .prolo-spoiler {
+  background-color: #dedede;
   border-radius: 3px;
+  padding: 2pt 4pt 2pt 4pt;
   transition: all 300ms ease;
 }
 
 .prolo-spoiler-hidden {
-  background-color: black;
+  background-color: #1e1e1e;
   cursor: pointer;
 }
 

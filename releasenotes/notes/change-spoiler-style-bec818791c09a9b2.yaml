@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Change spoiler style to make them look like Discord spoilers
