@@ -1,4 +1,7 @@
 {{ define "main" }}
+
+{{/* Do not show the page header if its content is the site title */}}
+{{ if not (eq .Site.Title .Title) }}
 <header class="home-title-box">
     <h1 class="site-header-title"> {{ .Title }}</h1>
     <p class="site-header-subtitle">
@@ -6,9 +9,24 @@
     </p>
 </header>
 
+{{/* Increase the size of the site header */}}
+{{ else }}
+<style>
+header.site-header {
+    font-size: 2.8vw;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.header-home-menu ul {
+    font-size: 1.1vw;
+}
+</style>
+{{ end }}
+
 <div class="container">
     <ul class="article-list">
-        {{ range .Pages }}
+        {{ range .Pages.ByTitle.ByWeight }}
         <li class="article-item">
             <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         </li>

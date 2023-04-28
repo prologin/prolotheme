@@ -25,9 +25,13 @@
 
     <!-- Spoilers stylesheet -->
     <link rel="stylesheet" href='{{ "css/spoiler.css" | absURL }}'>
+
     <!-- Video stylesheet -->
     <link rel="stylesheet" href='{{ "css/video.css" | absURL }}'>
 
     <!-- Highlighting boxes -->
     <link rel="stylesheet" href='{{ "css/highlight_boxes.css" | absURL }}'>
+
+    <!-- Style defined in the site config file -->
+    {{- partial "personalized_css.html" . -}}
 </head>

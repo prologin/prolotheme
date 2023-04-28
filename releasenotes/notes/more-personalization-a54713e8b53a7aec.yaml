@@ -1,0 +1,33 @@
+---
+features:
+  - |
+    More personalization are allowed. 
+    About the logo and the favicon, you can use the variables `logo`, 
+    `favicon` and `logoText` under the `[params]` section in the config file 
+    to personalize those informations (write the path of the images in hugo 
+    format).
+
+    About the theme personalization, you can use those variables to custom it 
+    under the section `[params.style]`:
+      - `primaryColor`  : Change the primary color of the website (used at 
+                          least for the header color and the table of content)
+      - `secondaryColor`: Change the secondary color of the website (used at 
+                          least for code and copied buttons)
+      - `headerFont`    : Change the font of the header
+upgrade:
+  - |
+    - Do not show the _page header_ on the home page. 
+    - Sort the subjects by `weight -> title` instead of the default sort 
+      (`weight -> date -> title`)
+deprecations:
+  - |
+    Override `favicon.html` and `logo.html` to personalize the logo is now 
+    deprecated. 
+    Use the variables `logo`, `favicon` and `logoText` under the `[params]`
+    section in the config file to personalize those informations.
+fixes:
+  - |
+    Remove the left padding when the `SECTION-BREAK` feature is used. 
+    Remove the left margin with the `article-container` id
+    Do not add section break related arrows when there are no section break
+    

@@ -18,30 +18,31 @@
     >
     {{ end }}
 </div>
-{{- $sectionDelimiter := "[SECTION-BREAK]" -}} {{- $ContentSections := split
-.Content $sectionDelimiter -}} {{- if gt (len $ContentSections) 1 -}}
-<div class="article-container-separated">
-    <article class="container">
-        <ol>
-            {{ range $i, $num := (seq (len $ContentSections)) }}
-            <a id="top"></a>
-            <li id="section-{{ $num }}">
-                {{ index $ContentSections $i | safeHTML }}
-            </li>
-            {{ end }}
-        </ol>
-    </article>
-</div>
-{{- else -}}
+
+{{- $sectionDelimiter := "[SECTION-BREAK]" -}}
+{{- $ContentSections := split .Content $sectionDelimiter -}}
+
 <div id="article-container">
+{{- if gt (len $ContentSections) 1 -}}
+    <article class="container">
+        {{ range $i, $num := (seq (len $ContentSections)) }}
+        <a id="top"></a>
+        <div id="section-{{ $num }}">
+            {{ index $ContentSections $i | safeHTML }}
+        </div>
+        {{ end }}
+    </article>
+
+{{- else -}}
     <aside class="toc">
         <div class="toc-title">Table des matières</div>
         {{ .TableOfContents }}
     </aside>
     <article class="container">{{ .Content }}</article>
-</div>
 {{- end -}}
-{{ if not .Page.IsNode }}
+</div>
+
+{{ if gt (len $ContentSections) 1 }}
 <div class="section-button prev-button">
     <svg width="40px" height="40px" viewBox="0 0 80 80" xml:space="preserve">
         <polyline

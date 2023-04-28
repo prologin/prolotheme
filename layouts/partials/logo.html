@@ -1,1 +1,2 @@
-<img src="/prologin.png" alt="Prologin Logo">
+<img src="/{{ .Site.Params.logo    | default "prologin.png" }}" 
+     alt="{{ .Site.Params.logoText | default "Prologin Logo" }}">

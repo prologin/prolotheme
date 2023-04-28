@@ -1,21 +1,20 @@
 .highlight_box {
-    padding: 12px;
-    margin-bottom: 24px;
-    padding-left: 12px;
+    border: 0;
     border-radius: 5px;
-    border: 0px;
     border-top: 10px solid;
+    margin-bottom: 24px;
+    padding: 12px;
 }
 
-.highlight_box :is(h1, h2, h3, h4, h5, h6)  {
+.highlight_box :is(h1, h2, h3, h4, h5, h6) {
     margin-top: 0;
     padding-top: 0;
 }
 
 .highlight_box .title {
     margin: -12px;
-    padding-left: 10px;
     padding-bottom: 8px;
+    padding-left: 10px;
 }
 
 .highlight_box .title::before {
@@ -35,8 +34,8 @@
 
 .exercice {
     /* Beige */
-    border-color: #92e6a7;
     background-color: #d2f6dd;
+    border-color: #92e6a7;
 }
 
 
@@ -53,8 +52,8 @@
 
 .info {
     /* Blue */
-    border-color: #6ab0de;
     background-color: #e7f2fa;
+    border-color: #6ab0de;
 }
 
 
@@ -71,8 +70,8 @@
 
 .warning {
     /* Orange */
-    border-color: #f0b37e;
     background-color: #ffedcc;
+    border-color: #f0b37e;
 }
 
 
@@ -90,6 +89,6 @@
 
 .error {
     /* Red */
-    border-color: #fd8b8b;
     background-color: #ffcccb;
+    border-color: #fd8b8b;
 }

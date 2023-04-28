@@ -1,15 +1,21 @@
 <header class="site-header">
-    {{- partial "logo.html" . -}}
-    <a href="/" class="header-home-link">
-        <h1 class="site-title">{{ .Site.Title }}</h1>
-    </a>
-    <ul>
-    {{ range .Site.Menus.header }}
-        <li>
-            <a href="{{ .URL }}" class="header-home-link">
-                <h1 class="header-menu">{{ .Name }}</h1>
-            </a>
-        </li>
-    {{ end }}
-    </ul>
+    <div class="header-home-menu">
+        {{- partial "logo.html" . -}}
+        {{ if .Site.Menus.header }}
+        <ul>
+            {{- range .Site.Menus.header -}}
+            <li>
+                <a href="{{ .URL }}" class="header-home-link">
+                    <h1 class="header-menu">{{ .Name }}</h1>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+    <div class="header-home-title">
+        <a href="/" class="header-home-link">
+            <h1 class="site-title">{{ .Site.Title }}</h1>
+        </a>
+    </div>
 </header>

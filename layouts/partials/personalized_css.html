@@ -1,0 +1,20 @@
+<style>
+/* Change the primary color */
+{{ with .Site.Params.Style.primaryColor }}
+:root {
+    --primary-color: {{ . }};
+}
+{{ end }}
+
+{{ with .Site.Params.Style.secondaryColor }}
+:root {
+    --secondary-color: {{ . }};
+}
+{{ end }}
+
+{{ with .Site.Params.Style.headerFont }}
+h1.site-title {
+    font-family: {{ . }};
+}
+{{ end }}
+</style>

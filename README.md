@@ -1,6 +1,32 @@
-# Fonctionnalités de ce thème
+# Thème utilisé par Prologin
 
-## Les boites de mise en valeur
+## Comment personnaliser ce thème
+
+Tout se passe dans votre fichier de configuration, sous la section `[params]`.
+
+### Ajouter votre logo et votre favicon
+
+1. Ajouter votre logo et votre favicon dans le dossier `static` à la racine de
+   votre site
+2. Remplir les champs `logo`, `logoText` et `favicon`
+
+### Changer le style du site
+
+Tout se passe dans votre fichier de configuration, sous la section
+`[params.style]` (toutes les valeurs doivent être au format CSS).
+
+Voici les possibilités actuelles :
+- `primaryColor`   : Changer la couleur primaire du site (comprends au moins
+                     la couleur du header et de la table des matière)
+- `secondaryColor` : Changer la couleur secondaire du site (comprends au moins
+                     la couleur de certains boutons)
+- `headerFont`     : Changer la police utilisée pour l'entête
+
+
+
+## Fonctionnalités de ce thème
+
+### Les boites de mise en valeur
 
 Il existe différents niveau de box :
 - `info`     (bleue)
@@ -20,11 +46,11 @@ Your text inside the box.
 {{% /box %}}
 ```
 
-## Texte en spoiler
+### Texte en spoiler
 
 On peut mettre du texte en mode "spoiler", c'est à dire qu'il est caché sous
 un bandeau noir tant qu'on ne clique pas dessus (même fonctionnement que les
-spoilers discord). Pour créer un spoiler dans ton TP, il faut utiliser ceci :
+spoilers Discord). Pour créer un spoiler dans ton TP, il faut utiliser ceci :
 
 ```
 {{< spoiler >}} My spoiling content {{< /spoiler >}}
@@ -34,7 +60,7 @@ Attention à utiliser des chevrons `<>` au lieu des `%`. Sinon cela ne
 fonctionnera pas.
 
 
-## Diviser votre TP
+### Diviser votre TP
 
 Un tp peut être long à lire... Nous vous conseillons donc de le diviser en différentes sous-parties.
 Pour cela il suffit de rajouter ceci à l'endroit de la séparation :
@@ -47,7 +73,7 @@ Attention à bien laisser au moins une ligne vide avant et après cette balise p
 
 
 
-## Les codeblocks intéractifs
+### Les codeblocks intéractifs
 
 Utilisables via la spécification du langage `code<lang>` dans le type des
 codeblocks, cela permet d'obtenir un codeblock intéractif directement sur le
@@ -58,7 +84,7 @@ Par exemple pour afficher une console Python :
 ```codepython
 ````
 
-### Ajouter le support d'un langage pour les codeblocks intéractifs.
+#### Ajouter le support d'un langage pour les codeblocks intéractifs.
 
 Pour l'instant, les langages suivants sont supportés:
 
@@ -76,7 +102,7 @@ Dans le cas où en ajouter un nouveau serait intéressant, voici les étapes à 
     fonctions `runCode<lang>()` et `initCode<lang>()`. Il faut également
     appliquer `initCode<lang>()` à tous les blocks trouvés dans le document.
 
-## Les vidéos
+### Les vidéos
 
 On peut inclure une vidéo comme ceci :
 
