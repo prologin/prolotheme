@@ -22,7 +22,7 @@
     copyBtn.className = "copy-button";
     copyBtn.textContent = "Copier";
 
-    var codeEl = containerEl.querySelector(".language-python");
+    var codeEl = containerEl.querySelector("[class^='language-']");
     copyBtn.addEventListener('click', function() {
       var selection = selectText(codeEl);
       navigator.clipboard.writeText(selectText(codeEl)).then(

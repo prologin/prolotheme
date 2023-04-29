@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Fix the copy buttons. The copy buttons that were linked to a codeblock with
+    another language than `python` (`py` didn't work neither) did not copy 
+    anything. 
+
+    Now, copy buttons do not take in account the language of the codeblock
