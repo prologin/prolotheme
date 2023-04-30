@@ -1,0 +1,4 @@
+---
+other:
+    - |
+      fix(deps): update dependency codemirror to v5.65.13.
