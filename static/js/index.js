@@ -58,7 +58,6 @@
       avancement = sections.length - 1;
 
     var i = 0
-
     for (const el of sections) {
       var check = document.querySelector(".footer-state-" + i)
       
@@ -77,6 +76,19 @@
         el.style.display = 'none';
         check.className = "footer-state-" + i + " ended";
       }
+      
+      // only display next and previous buttons when it makes sense
+      var next = document.querySelector(".next-button")
+      var prev = document.querySelector(".prev-button")
+      if (avancement == 0)
+        prev.style.display = 'none';
+      else
+        prev.style.display = 'block';
+
+      if (avancement == sections.length - 1)
+        next.style.display = 'none';
+      else
+        next.style.display = 'block';
 
       i += 1
     }

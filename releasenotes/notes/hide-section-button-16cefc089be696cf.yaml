@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Hide section switch button from the UI when there are no more sections remaining or when the user is at the first one.
