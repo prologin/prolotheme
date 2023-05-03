@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix typo in highlight boxes, changed from 'exercice' to 'exercise'.
+    This is changed to be uniform with the other box types so that they are all in english.

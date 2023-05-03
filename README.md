@@ -32,7 +32,7 @@ Il existe différents niveau de box :
 - `info`     (bleue)
 - `warning`  (orange)
 - `error`    (rouge)
-- `exercice` (vert)
+- `exercise` (vert)
 
 Il est aussi possible d'ajouter un titre à sa box.
 Le paramètre `title` est optionnel.

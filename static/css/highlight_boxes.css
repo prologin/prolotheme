@@ -22,17 +22,17 @@
 }
 
 
-/****** EXERCICE ******/
+/****** EXERCISE ******/
 
-.exercice .title::before {
+.exercise .title::before {
     content: "📝";
 }
 
-.exercice .title {
+.exercise .title {
     background-color: #92e6a7;
 }
 
-.exercice {
+.exercise {
     /* Beige */
     background-color: #d2f6dd;
     border-color: #92e6a7;
