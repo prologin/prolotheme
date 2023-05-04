@@ -113,8 +113,27 @@
     prev.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) - 1) });
   }
 
+  function setupImageZoom(images) {
+      var zoomBox = document.querySelector("#imgzoom");
+
+      for (let i of images) {
+          i.onclick = () => {
+              let clone = i.cloneNode();
+              clone.className = "";
+              zoomBox.innerHTML = "";
+              zoomBox.appendChild(clone);
+              zoomBox.className = "show";
+          };
+      }
+
+      zoomBox.onclick = () => { zoomBox.className = ""; };
+  }
+
 
   var sectionBlock = document.querySelectorAll('[id^=section]');
+  var article = document.querySelector("#article-container");
+  var images = article.getElementsByTagName('img');
+  setupImageZoom(images);
 
   addState(sectionBlock)
   divide(sectionBlock, 0)
