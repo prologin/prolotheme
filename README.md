@@ -120,3 +120,23 @@ On peut aussi la faire démarrer automatiquement avec l'option 'autoplay'.
 ```
 {{< video src="path/to/video" type="video/type" autoplay="yes" >}}
 ```
+
+
+## Zipper des ressources pour les transmettre aux participant.e.s
+
+Le zip des ressources se fait automatiquement lorsque vous exécutez le script
+`compile_resources.sh` depuis votre site hugo. Cependant, ce script se base sur
+l'architecture de base d'un sujet (trouvable dans `archetypes/subject/`), qui
+doit donc être respectée pour que les ressources soient compressées
+correctement. 
+
+Pour permettre aux participant.e.s d'avoir accès à ces ressources, il vous
+suffit de remplir le champs `code_stub_url` comme ceci : 
+
+```
+# Si plusieurs ressources fournies
+./resources/given_resources/<nom_sujet>.zip
+
+# Si un seul fichier est fourni
+./resources/given_resources/<nom_du_fichier>
+```
