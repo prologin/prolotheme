@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Make pipeline fail if an error occurs during the compilation of given files
