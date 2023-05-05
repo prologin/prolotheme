@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix malfunctioning python codeblocks on multiple section
