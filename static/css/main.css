@@ -167,12 +167,11 @@ a.code-stub-button {
 }
 
 .home-title-box {
-    background-color: #222;
+    background-color: var(--primary-color);
     color: whitesmoke;
     padding: 2em 0;
     text-align: center;
 }
-
 .site-header-title {
     font-size: 5em;
     margin: 0;
@@ -188,13 +187,27 @@ a.code-stub-button {
     margin-right: auto;
     max-width: 690px;
     padding: 0 1em;
+    text-align: center;
 }
 
 .article-item {
-    background: lightgray;
     display: block;
+    width: calc(100% - 3em);
     margin: 1em 0;
     padding: 1em;
+
+    border-radius: 30px;
+    color: white;
+
+    text-align: center;
+    text-shadow: 1px 3px var(--text-color);
+
+    --item-color: gray;
+    --item-pos: 10px;
+
+    background: var(--item-color);
+    transform: translateX(var(--item-pos));
+
 }
 
 .article-item h2 {

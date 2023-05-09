@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    New style for title page.
+    You can use the variable `colorTheme` to set the colors used in the menu.
+    They will be used randomly to color the buttons. You can also use 
+    `menuOffset` to define the max horizontal offset of the buttons.
+    Like the color, the offset will be choosed randomly.

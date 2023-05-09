@@ -1,0 +1,34 @@
+<script type="text/javascript">
+'use strict';
+
+var seed = 42;
+function rnd() {
+    var r = Math.sin(seed++) * 10000;
+    return r - Math.floor(r);
+};
+
+{{ with .Site.Params.Style.colorScheme }}
+var colors = {{ . }};
+{{ end }}
+
+var tpItems = document.querySelectorAll('.article-item');
+var prev = null;
+let i = 0;
+for (; i < tpItems.length; i++) {
+    {{ with .Site.Params.Style.colorScheme }}
+    if (prev != null)
+        colors.push(prev[0])
+
+    const randomColor = ((colors.length - 1) * rnd() | 0);
+
+    prev = colors.splice(randomColor, 1);
+    tpItems[i].style.setProperty('--item-color', prev)
+    {{ end }}
+
+    {{ with .Site.Params.Style.menuOffset }}
+    var off = {{ . }};
+    const offset = ((off * rnd() | 0) - (off / 2)) * (off / 2);
+    tpItems[i].style.setProperty('--item-pos', offset.toString() + "px")
+    {{ end }}
+}
+</script>

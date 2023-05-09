@@ -21,7 +21,9 @@ Voici les possibilités actuelles :
 - `secondaryColor` : Changer la couleur secondaire du site (comprends au moins
                      la couleur de certains boutons)
 - `headerFont`     : Changer la police utilisée pour l'entête
-
+- `colorScheme`    : Changer la couleur des boutons du menu de sélection des tps.
+                     Une liste de couleurs doit être passée en paramètre.
+- `menuOffset`     : Changer le décalage max des boutons du menu (en pixel)
 
 
 ## Fonctionnalités de ce thème

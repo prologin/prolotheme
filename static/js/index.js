@@ -60,7 +60,7 @@
     var i = 0
     for (const el of sections) {
       var check = document.querySelector(".footer-state-" + i)
-      
+
       if (i == avancement)
       {
         el.style.display = 'block';
@@ -128,7 +128,6 @@
 
       zoomBox.onclick = () => { zoomBox.className = ""; };
   }
-
 
   var sectionBlock = document.querySelectorAll('[id^=section]');
   var article = document.querySelector("#article-container");
