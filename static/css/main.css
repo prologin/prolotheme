@@ -213,6 +213,10 @@ img {
     max-width: 100%;
 }
 
+#article-container img {
+    cursor: pointer;
+}
+
 #imgzoom {
     background: rgba(0, 0, 0, 0.5);
 
@@ -238,6 +242,7 @@ img {
 }
 
 #imgzoom img {
+    cursor: pointer;
     width: 90%;
     height: 90%;
     margin: auto;
