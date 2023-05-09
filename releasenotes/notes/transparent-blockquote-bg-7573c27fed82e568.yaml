@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Make blockquote background transparent

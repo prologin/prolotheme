@@ -8,7 +8,7 @@ h1 {
 }
 
 blockquote {
-    background: #f9f9f9;
+    background: rgba(249, 249, 249, 0.6);
     border-left: 10px solid #ccc;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
