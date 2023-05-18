@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix rendering problems in `box` shortcode caused by the use of the 
+    `markdownify` hugo function that implied to markdownify the content twice
+    with the use of `%` in shortcode call.
