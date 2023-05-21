@@ -68,8 +68,35 @@ blockquote p {
 /* Text-style: tables */
 
 table {
+    border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
+}
+
+table td, table th {
+    padding: 15px;
+}
+
+table thead th {
+    background-color: var(--primary-color);
+    border: 1px solid #54585d;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+table tbody td {
+    border: 1px solid #dddfe1;
+    color: #636363;
+}
+
+table tbody tr {
+    background-color: #f9fafb;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 
 /* Text-style: images */
