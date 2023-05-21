@@ -1,0 +1,54 @@
+.toc {
+    border-left: 4px solid var(--primary-color);
+    border-radius: 5px;
+    list-style: none;
+    margin: 20px;
+    padding-left: 15px;
+    position: sticky;
+    top: 50px;
+}
+
+.toc-title {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 5px
+}
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.toc li {
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+.toc a:any-link {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: grey;
+}
+
+.toc ul ul a:any-link {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+
+/**** responsive ****/
+
+@media screen and (max-width: 1400px) {
+    .toc {
+        margin: 10%;
+        position: relative;
+    }
+}

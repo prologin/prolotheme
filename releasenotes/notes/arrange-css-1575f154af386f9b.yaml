@@ -1,0 +1,10 @@
+---
+upgrade:
+  - |
+    Arrange main.css into different CSS files. Style sorted into a specific file
+    for each type of object (header, content, table of content, etc)
+
+deprecations:
+  - |
+    footer, footer-list, footer-state, site-header-title, site-header-subtitle
+    CSS classes.

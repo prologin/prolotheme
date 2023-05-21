@@ -3,8 +3,6 @@
       {{ .Site.Title }}
     {{ end }}</title>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href='{{ "css/main.css" | absURL }}'>
-    <link type="text/css" rel="stylesheet" href='{{ "css/codeblocks.css" | absURL }}'>
     {{- partial "favicon.html" . -}}
     <link rel="canonical" href="{{ .Permalink }}">
     <script>
@@ -20,6 +18,14 @@
     <script type="text/javascript" id="MathJax-script" async
       src="/js/tex-svg.js">
     </script>
+    <link type="text/css" rel="stylesheet" href='{{ "css/main.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/header.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/menu.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/content.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/toc.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/section_break.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/codeblocks.css" | absURL }}'>
+
     <link rel="stylesheet" href="/css/codemirror/codemirror.css">
     <link rel="stylesheet" href="/css/codemirror/theme/monokai.css">
 

@@ -3,8 +3,8 @@
 {{/* Do not show the page header if its content is the site title */}}
 {{ if not (eq .Site.Title .Title) }}
 <header class="home-title-box">
-    <h1 class="site-header-title"> {{ .Title }}</h1>
-    <p class="site-header-subtitle">
+    <h1 class="page-header-title"> {{ .Title }}</h1>
+    <p class="page-header-subtitle">
     {{ .Params.subtitle }}
     </p>
 </header>

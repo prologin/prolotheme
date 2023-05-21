@@ -59,24 +59,24 @@
 
     var i = 0
     for (const el of sections) {
-      var check = document.querySelector(".footer-state-" + i)
+      var check = document.querySelector(".progress-bar-state-" + i)
 
       if (i == avancement)
       {
         el.style.display = 'block';
-        check.className = "footer-state-" + i + " started";
+        check.className = "progress-bar-state-" + i + " started";
       }
       else if (i > avancement)
       {
         el.style.display = 'none';
-        check.className = "footer-state-" + i;
+        check.className = "progress-bar-state-" + i;
       }
       else
       {
         el.style.display = 'none';
-        check.className = "footer-state-" + i + " ended";
+        check.className = "progress-bar-state-" + i + " ended";
       }
-      
+
       // only display next and previous buttons when it makes sense
       var next = document.querySelector(".next-button")
       var prev = document.querySelector(".prev-button")
@@ -97,11 +97,11 @@
   }
 
   function addState(sections) {
-    var list = document.querySelector(".footer-list")
+    var list = document.querySelector(".progress-bar")
     let i = 0
     for (; i < sections.length; i++) {
       var state = document.createElement("div");
-      state.className = "footer-state-" + i;
+      state.className = "progress-bar-state-" + i;
       list.appendChild(state)
     }
   }

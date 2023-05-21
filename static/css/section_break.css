@@ -1,0 +1,61 @@
+/****** Buttons *****/
+
+.section-button {
+    border-radius: 10%;
+    background-color: #DDDDDD;
+
+    position: fixed;
+    bottom: 40px;
+
+    cursor: pointer;
+
+    width: 56px;
+    height: 56px;
+}
+
+.section-button.prev-button {
+    left: clamp(40px, calc(50% - 500px), 50%);
+}
+
+.section-button.next-button {
+    right: clamp(40px, calc(50% - 500px), 50%);
+}
+
+.section-button svg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*** Progress-Bar **/
+
+.progress-bar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+[class^=progress-bar-state] {
+    align-items: center;
+    background-color: var(--bg-color);
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    height: 10px;
+    width: 100%;
+}
+
+/**** Bar Colors ***/
+.started {
+    background-color: var(--primary-color);
+}
+
+.ended {
+    background-color: var(--primary-color);
+}
+

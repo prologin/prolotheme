@@ -1,4 +1,46 @@
 /* exec */
+.code {
+    background-color: var(--bg-codeblock-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    line-height: normal;
+    margin: 10px;
+    max-width: 100%;
+    min-width: 100px;
+    overflow-x: scroll;
+    padding: 10px;
+    place-content: space-between;
+    position: relative;
+}
+
+code:not(pre>code) {
+    background-color: #CECECE;
+    border: 1px solid #BCBEC0;
+    border-radius: 5px;
+    font: .75em Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    padding: 1px;
+    padding-bottom: .3px;
+    white-space: nowrap;
+}
+
+.copy-button {
+    background-color: var(--secondary-color);
+    border-style: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 16px;
+    position: sticky;
+    right: 10px;
+}
+
+.code::-webkit-scrollbar {
+    height: 0;
+}
+
 .prolo-codeblock {
     background-color: #2e2e2e;
     border-radius: 10px;

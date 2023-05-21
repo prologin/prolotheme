@@ -1,0 +1,67 @@
+/***** Container ****/
+
+header.site-header {
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    display: flex;
+    height: 3.4em;
+    justify-content: center;
+}
+
+/******* Logo ******/
+
+.header-home-menu {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 90%;
+}
+
+header.site-header img {
+    height: 1.5em;
+    margin-right: 1em;
+    position: relative;
+}
+
+/****** Title ******/
+
+.header-home-title {
+    margin: 0 auto 0;
+    z-index: 1;
+}
+
+h1.site-title {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.header-home-link {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+}
+
+.header-home-link:visited {
+    color: inherit;
+}
+
+/* Fast-access Menu */
+
+.header-menu {
+    color: #d3d3d3;
+    font-size: 1em;
+    margin: 0;
+}
+
+header.site-header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+header.site-header li {
+    padding: 0 15px;
+}
