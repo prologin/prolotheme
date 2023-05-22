@@ -27,8 +27,21 @@ header.site-header {
 <div class="container">
     <ul class="article-list">
         {{ range .Pages.ByTitle.ByWeight }}
+        {{ if .Params.Tags }}
+        <li class="article-item article-tagged-item">
+        {{ else }}
         <li class="article-item">
+        {{ end }}
             <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ if .Params.Tags }}
+                <ul class="tag-list">
+                    {{ range .Params.tags }}
+                    <li class="tag-item {{ lower . }}">
+                        <a href="/tags/{{ . }}">{{ . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
         </li>
         {{ end }}
     </ul>

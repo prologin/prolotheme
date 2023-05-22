@@ -17,4 +17,16 @@ h1.site-title {
     font-family: {{ . }};
 }
 {{ end }}
+
+/* Set a personalized color for the used tags if set in the config file */
+{{ range $name, $tag := .Site.Taxonomies.tags }}
+
+{{ with $.Site.Params.Tags.Get $name }} 
+.tag-item.{{ $name }} {
+    background-color: {{ . }};
+    border-color: color-mix(in srgb, {{ . }} 80%, black);
+}
+{{ end }}
+
+{{ end }}
 </style>

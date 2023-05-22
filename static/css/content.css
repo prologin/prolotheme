@@ -107,6 +107,39 @@ a.code-stub-button {
     text-decoration: none;
 }
 
+/**** tags ****/
+
+.article-tagged-item h2 { 
+    display: inline-block;
+    padding: 0 0.8em 0.2em;
+    border-bottom: 2px solid;
+}
+
+.tag-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    margin-top: 0.6em;
+}
+
+.tag-item {
+    border: 3px solid;
+    border-radius: 50px;
+
+    background-color: color-mix(in srgb, var(--item-color) 30%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--item-color) 10%, var(--primary-color));
+    font-size: 0.6em;
+    text-shadow: none;
+
+    list-style: none;
+
+    padding: 0.4em 1em;
+    margin: 0 0.5em;
+}
+
+
+
 /**** responsive ****/
 
 @media screen and (max-width: 1400px) {

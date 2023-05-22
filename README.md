@@ -25,6 +25,13 @@ Voici les possibilités actuelles :
                      Une liste de couleurs doit être passée en paramètre.
 - `menuOffset`     : Changer le décalage max des boutons du menu (en pixel)
 
+### Changer la couleur des tags
+
+Pour changer la couleur des tags, il suffit de rajouter, sous la section
+`[params.tags]` les couleurs associées aux tags. 
+
+Par exemple, pour définir la couleur du tag `Exemple` (la casse n'est pas prise
+en compte), sous la section `[params.tags]`, il faudra ajouter : `exemple = "green"`
 
 ## Fonctionnalités de ce thème
 

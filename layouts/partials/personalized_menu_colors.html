@@ -1,12 +1,14 @@
 <script type="text/javascript">
 'use strict';
 
+// Random function
 var seed = 42;
 function rnd() {
     var r = Math.sin(seed++) * 10000;
     return r - Math.floor(r);
 };
 
+// Items colors
 {{ with .Site.Params.Style.colorScheme }}
 var colors = {{ . }};
 {{ end }}
@@ -30,5 +32,19 @@ for (; i < tpItems.length; i++) {
     const offset = ((off * rnd() | 0) - (off / 2)) * (off / 2);
     tpItems[i].style.setProperty('--item-pos', offset.toString() + "px")
     {{ end }}
+}
+
+// Tags text color
+var tagItems = document.querySelectorAll('.tag-item');
+for (let tagI = 0; tagI < tagItems.length; tagI++) {
+    var bgColor = document.defaultView.getComputedStyle(tagItems[tagI], null).backgroundColor;
+    var rgb = bgColor.replace(/[^\d,]/g, '').split(',');
+    var luminescence = 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+
+    var tagText = tagItems[tagI].firstElementChild;
+    if (luminescence > 150)
+        tagText.style.color = 'var(--text-color)';
+    else
+        tagText.style.color = 'white';
 }
 </script>

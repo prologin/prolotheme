@@ -1,0 +1,23 @@
+---
+features:
+  - |
+    Subjects can now be tagged with common tags using the front matter named 
+    `tags`, like this:#
+    ```
+    tags:
+      - First
+      - Second
+      - Third
+    ```
+
+    Tags are displayed on the list page and can be clicked to redirect to the 
+    list of all subjects that also have this tag. 
+
+    Tags color can be defined in the configuration file like this (example for
+    toml config file):#
+    ```
+    [Params.Tags]
+      first = "green"
+      second = "#FFFFFF"
+      third = "red"
+    ```
