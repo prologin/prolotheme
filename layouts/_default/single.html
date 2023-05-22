@@ -11,7 +11,9 @@
 <div class="progress-bar"></div>
 <div class="article-title-box">
     <h1 class="article-title">{{ .Title }}</h1>
-    <p class="article-subtitle">{{ .Params.subtitle }}</p>
+    {{- with .Params.subtitle -}}
+    <p class="article-subtitle">{{ . }}</p>
+    {{- end -}}
     {{ if isset .Params "code_stub_url" }}
     <a href="{{ .Params.code_stub_url }}" class="code-stub-button" download
         >Code à compléter</a

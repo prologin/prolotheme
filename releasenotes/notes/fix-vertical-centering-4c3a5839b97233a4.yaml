@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Subject titles are now vertically centered even if there is not subtitle.
