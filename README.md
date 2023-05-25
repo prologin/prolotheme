@@ -1,151 +1,159 @@
-# Thème utilisé par Prologin
+# Hugo theme created and used by Prologin
 
-## Comment personnaliser ce thème
+## How to customize this theme?
 
-Tout se passe dans votre fichier de configuration, sous la section `[params]`.
+Every available customization can be made via variables in the hugo config file.
+All the described variables have to be under the `params` section. 
 
-### Ajouter votre logo et votre favicon
 
-1. Ajouter votre logo et votre favicon dans le dossier `static` à la racine de
-   votre site
-2. Remplir les champs `logo`, `logoText` et `favicon`
 
-### Changer le style du site
+### Add your logo and your favicon
 
-Tout se passe dans votre fichier de configuration, sous la section
-`[params.style]` (toutes les valeurs doivent être au format CSS).
+1. Store them in the `static` folder in the root directory of the hugo site (not the _theme_ static directory)
+2. Fill the fields `logo` and `favicon` with the hugo paths of your files
+3. Fill the field `logoText` to setup alternate text for your logo
 
-Voici les possibilités actuelles :
-- `primaryColor`   : Changer la couleur primaire du site (comprends au moins
-                     la couleur du header et de la table des matière)
-- `secondaryColor` : Changer la couleur secondaire du site (comprends au moins
-                     la couleur de certains boutons)
-- `headerFont`     : Changer la police utilisée pour l'entête
-- `colorScheme`    : Changer la couleur des boutons du menu de sélection des tps.
-                     Une liste de couleurs doit être passée en paramètre.
-- `menuOffset`     : Changer le décalage max des boutons du menu (en pixel)
 
-### Changer la couleur des tags
+### Change tags color
 
-Pour changer la couleur des tags, il suffit de rajouter, sous la section
-`[params.tags]` les couleurs associées aux tags. 
+To change the default tag color, you need to add colors associated to your tags
+under the section `params.tags`.
 
-Par exemple, pour définir la couleur du tag `Exemple` (la casse n'est pas prise
-en compte), sous la section `[params.tags]`, il faudra ajouter : `exemple = "green"`
+For example, to define the color of the tag `Example` to _green_ (case doesn't matter), you
+need to add `example = "green"` under the sections `params.tags`.
 
-## Fonctionnalités de ce thème
 
-### Les boites de mise en valeur
+### Customize CSS
 
-Il existe différents niveau de box :
-- `info`     (bleue)
+The following fields need to be written under the subsection `style` (all the
+values must be in the CSS classical format):
+
+- `primaryColor`   : Change the primary color of the website (at least site
+                     header and table of content color)
+- `secondaryColor` : Change the secondary color of the website (at least
+                     _codeblocks_ buttons)
+- `headerFont`     : Change font used for the title of the site header
+- `colorScheme`    : Generate colored item list using those colors. The given
+                     colors must be a list
+- `menuOffset`     : Change the max random offset of the items in the list
+                     layout
+
+
+## Content Features
+
+### Highlight boxes
+
+There are different levels of highlight boxes:
+
+- `info`     (blue)
 - `warning`  (orange)
-- `error`    (rouge)
-- `exercise` (vert)
+- `error`    (red)
+- `exercise` (green)
 
-Il est aussi possible d'ajouter un titre à sa box.
-Le paramètre `title` est optionnel.
-
-Voici comment les utiliser :
+You also can add a title to your boxes using the `title` parameter:
 
 ```
-{{% box type="a type" title="A title" %}}
+{{% box type="a required type" title="A optional title" %}}
 > A quote inside a box
 Your text inside the box.
 {{% /box %}}
 ```
 
-### Texte en spoiler
 
-On peut mettre du texte en mode "spoiler", c'est à dire qu'il est caché sous
-un bandeau noir tant qu'on ne clique pas dessus (même fonctionnement que les
-spoilers Discord). Pour créer un spoiler dans ton TP, il faut utiliser ceci :
+
+### Spoiler text
+
+You can also use `spoiler` shortcode to hide some content until the user clic on
+it to make it visible (like Discord spoilers):
 
 ```
 {{< spoiler >}} My spoiling content {{< /spoiler >}}
 ```
 
-Attention à utiliser des chevrons `<>` au lieu des `%`. Sinon cela ne
-fonctionnera pas.
 
+### Include videos
 
-### Diviser votre TP
-
-Un tp peut être long à lire... Nous vous conseillons donc de le diviser en différentes sous-parties.
-Pour cela il suffit de rajouter ceci à l'endroit de la séparation :
-
-```
-[SECTION-BREAK]
-```
-
-Attention à bien laisser au moins une ligne vide avant et après cette balise pour éviter tout problème.
-
-
-
-### Les codeblocks intéractifs
-
-Utilisables via la spécification du langage `code<lang>` dans le type des
-codeblocks, cela permet d'obtenir un codeblock intéractif directement sur le
-navigateur web.
-
-Par exemple pour afficher une console Python :
-````
-```codepython
-````
-
-#### Ajouter le support d'un langage pour les codeblocks intéractifs.
-
-Pour l'instant, les langages suivants sont supportés:
-
-- Python (module Turtle inclus)
-- HTML
-
-Dans le cas où en ajouter un nouveau serait intéressant, voici les étapes à suivre:
-
-
-1. Ajouter dans `build.sh` la commande pour copier le fichier correspondant au language que vous voulez rajouter. 
-    La liste des languages est disponible ici : https://www-sop.inria.fr/teams/marelle/advanced-coq-16-17/jscoq/external/CodeMirror/mode/
-2. Ajouter le script du mode _CodeMirror_ correspondant dans `layouts/_default/single.html`
-3. Ajouter un fichier `layouts/_default/_markup/render-codeblock-code<langage>.html`. S'inspirer de ceux existants.
-4. Dans `codeblocks.js`, ajouter un block `(function(){})()` et y définir les
-    fonctions `runCode<lang>()` et `initCode<lang>()`. Il faut également
-    appliquer `initCode<lang>()` à tous les blocks trouvés dans le document.
-
-### Les vidéos
-
-On peut inclure une vidéo comme ceci :
-
+You can include video using this shortcode:
 ```
 {{< video src="path/to/video" type="video/type" >}}
 ``` 
 
-Les types suivants sont supportés:
+The following types are supported:
 - MP4
 - WebM
 - Ogg
 
-On peut aussi la faire démarrer automatiquement avec l'option 'autoplay'.
-
+You can use `autoplay` parameter to automatically start the video (default: no):
 ```
 {{< video src="path/to/video" type="video/type" autoplay="yes" >}}
 ```
 
 
-## Zipper des ressources pour les transmettre aux participant.e.s
+### Divide the subject in multiple sections
 
-Le zip des ressources se fait automatiquement lorsque vous exécutez le script
-`compile_resources.sh` depuis votre site hugo. Cependant, ce script se base sur
-l'architecture de base d'un sujet (trouvable dans `archetypes/subject/`), qui
-doit donc être respectée pour que les ressources soient compressées
-correctement. 
-
-Pour permettre aux participant.e.s d'avoir accès à ces ressources, il vous
-suffit de remplir le champs `code_stub_url` comme ceci : 
+A subject can be very long... It is strongly recommanded to divide it into
+multiple subsection using that kind of tag:
 
 ```
-# Si plusieurs ressources fournies
-./resources/given_resources/<nom_sujet>.zip
+[SECTION-BREAK]
+```
 
-# Si un seul fichier est fourni
-./resources/given_resources/<nom_du_fichier>
+**/!\ Remember to leave at least one blank line before and after the tag to avoid
+rendering problems /!\**
+
+
+
+### Interactives codeblocks
+
+You can generate interactives codeblocks (to let users directly run their code
+on the website) adding the `code<lang>` tag in the codeblock types.   
+
+For example, here is how to create interactive Python codeblocks:
+
+````
+```codepython
+# Some Python code
+print("Hello World!")
+```
+````
+
+#### Supported languages
+
+- Python (Turtle included)
+- HTML
+
+#### Add a new language support
+
+1. Add a line in `build.sh` to copy the javascript file related to the language you want to
+   add. Available languages can be found [here](https://www-sop.inria.fr/teams/marelle/advanced-coq-16-17/jscoq/external/CodeMirror/mode/)
+2. Link the script of the _CodeMirror Mode_ in `layouts/_default/single.html`
+3. Create a new file named `layouts/_default/_markup/render-codeblock-code<lang>.html` by copying an existing one.
+    Change the class of the main `div` and modify the output tags based on what you need.
+4. In the file `codeblocks.js`, add a new `(function(){})()` block and define
+   the functions `runCode<lang>()` and `initCode<lang>()` inside of the brackets.
+   After defining them, you must call `initCode<lang>()` on each codeblock of
+   said language found on the page.
+
+
+
+## Give resources to the user
+
+Zipping resources is made automatically by the `compile_resources.sh` script.
+**Don't forget to call it in your `build.sh` script in your hugo site!**
+
+### Warning!
+
+This script is based on the archetype available in `archetypes/subject/`.
+Therefore, it must be used to make sure the script processes correctly given
+resources.
+
+To allow users to download the resources, you must fill the `code_stub_url`
+front matter like this:
+
+```
+# If multiple resources or a folder is given
+./resources/given_resources/<subject_title>.zip
+
+# If only one file is given
+./resources/given_resources/<name_of_file>
 ```
