@@ -1,10 +1,24 @@
 # Hugo theme created and used by Prologin
 
+## How to use this theme?
+
+The Makefile has multiple useful rules needed for developing your website:
+  - `deploy`: compile dependencies and zip given resources
+  - `dependencies`: compile dependencies
+  - `given_resources`: zip all given resources
+  - `clean`: clean the dependencies and the given resources
+  - `clean_resources`: clean the given resources only
+  - `clean_dependencies`: clean the dependencies only
+  - `preview`: preview the theme using the example site
+
+Before deploying the website, you need to call the `deploy` rule to make sure
+that your website will work correctly.
+
+
 ## How to customize this theme?
 
 Every available customization can be made via variables in the hugo config file.
 All the described variables have to be under the `params` section. 
-
 
 
 ### Add your logo and your favicon
@@ -60,7 +74,6 @@ Your text inside the box.
 ```
 
 
-
 ### Spoiler text
 
 You can also use `spoiler` shortcode to hide some content until the user clic on
@@ -102,7 +115,6 @@ multiple subsection using that kind of tag:
 rendering problems /!\**
 
 
-
 ### Interactives codeblocks
 
 You can generate interactives codeblocks (to let users directly run their code
@@ -122,9 +134,10 @@ print("Hello World!")
 - Python (Turtle included)
 - HTML
 
+
 #### Add a new language support
 
-1. Add a line in `build.sh` to copy the javascript file related to the language you want to
+1. Add a line in `dependencies` make rule to copy the javascript file related to the language you want to
    add. Available languages can be found [here](https://www-sop.inria.fr/teams/marelle/advanced-coq-16-17/jscoq/external/CodeMirror/mode/)
 2. Link the script of the _CodeMirror Mode_ in `layouts/_default/single.html`
 3. Create a new file named `layouts/_default/_markup/render-codeblock-code<lang>.html` by copying an existing one.
@@ -135,11 +148,10 @@ print("Hello World!")
    said language found on the page.
 
 
-
 ## Give resources to the user
 
-Zipping resources is made automatically by the `compile_resources.sh` script.
-**Don't forget to call it in your `build.sh` script in your hugo site!**
+Zipping resources is made automatically by the `make given_resources` rule.
+**Don't forget to call it in your init script in your hugo site!**
 
 ### Warning!
 

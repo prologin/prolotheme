@@ -1,0 +1,29 @@
+---
+deprecations:
+  - |
+    Use of the scripts `build.sh` and `compile_resources.sh` are now 
+    deprecated.
+
+    Use `make` instead with those rules:
+      - `deploy`: compile dependencies and given resources
+      - `dependencies`: compile dependencies only
+      - `given_resources`: compile given resources only
+      - `clean`: clean the dependencies and the given resources
+      - `clean_resources`: clean the given resources only
+      - `clean_dependencies`: clean the dependencies only
+      - `preview`: preview the theme using the example site
+other:
+  - |
+    Use of Makefile instead of isolated scripts. 
+    Here are the rules of the Makefile:
+      - `deploy`: compile dependencies and given resources
+      - `dependencies`: compile dependencies only
+      - `given_resources`: compile given resources only
+      - `clean`: clean the dependencies and the given resources
+      - `clean_resources`: clean the given resources only
+      - `clean_dependencies`: clean the dependencies only
+      - `preview`: preview the theme using the example site
+
+    Note that `shellcheck` is not used in the CI anymore, knowing that there is
+    no more shell scripts.
+

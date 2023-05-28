@@ -12,16 +12,6 @@ code_quality:
   stage: qa
   interruptible: true
 
-lint:shellcheck:
-  stage: qa
-  interruptible: true
-  needs: []
-  image:
-    name: koalaman/shellcheck-alpine
-    entrypoint: [""]
-  script:
-    - shellcheck --format tty $(find -name '*.sh' -type f)
-
 build:
   stage: build
   interruptible: true
@@ -30,7 +20,7 @@ build:
     name: "node:19"
     entrypoint: [""]
   script:
-    - ./build.sh
+    - make dependencies
 
 release note:
   stage: qa
