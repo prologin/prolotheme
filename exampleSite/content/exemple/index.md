@@ -5,7 +5,7 @@ authors: ["Prologin"]
 subtitle: Voici un TP présentant toutes les actions possibles pour créer un TP. 
 code_stub_url: FIXME (or not)
 ---
-
+Il est conseillé d'ouvrir le dossier `exampleSite/exemple/` afin de comprendre la syntaxe des différentes commandes et la structure des fichiers.
 Avant tout, pense à remplir les différentes `meta-data` qui sont utiles pour 
 que ton TP soit correctement répertorié et affiché sur le site. 
 
@@ -23,7 +23,7 @@ Nous avons ici du texte en **gras**, _italique_, ~~barré~~, `inline codeblock`,
 **_gras et italique_**, [un lien vers google](https://www.google.fr),
 <u>souligné</u>, etc...
 Toutes les balises markdown sont prises en compte par Hugo (si ce n'est pas le
-cas, vous pouvez ouvrir une issue sur [gitlab](https://www.gitlab.com/prologin/gcc/contenus)). 
+cas, vous pouvez ouvrir une issue sur [gitlab](https://www.gitlab.com/prologin/tech/packages/hugo-base-theme)). 
 
 > Nous avons aussi ici une citation.
 
