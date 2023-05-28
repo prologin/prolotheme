@@ -8,3 +8,6 @@ static/js/skulpt.min.js
 static/js/tex-svg.js
 
 static/css/codemirror/
+
+public/
+.hugo_build.lock

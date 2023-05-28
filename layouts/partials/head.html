@@ -18,25 +18,25 @@
     <script type="text/javascript" id="MathJax-script" async
       src="/js/tex-svg.js">
     </script>
-    <link type="text/css" rel="stylesheet" href='{{ "css/main.css" | absURL }}'>
-    <link type="text/css" rel="stylesheet" href='{{ "css/header.css" | absURL }}'>
-    <link type="text/css" rel="stylesheet" href='{{ "css/menu.css" | absURL }}'>
-    <link type="text/css" rel="stylesheet" href='{{ "css/content.css" | absURL }}'>
-    <link type="text/css" rel="stylesheet" href='{{ "css/toc.css" | absURL }}'>
-    <link type="text/css" rel="stylesheet" href='{{ "css/section_break.css" | absURL }}'>
-    <link type="text/css" rel="stylesheet" href='{{ "css/codeblocks.css" | absURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/main.css" | relURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/header.css" | relURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/menu.css" | relURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/content.css" | relURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/toc.css" | relURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/section_break.css" | relURL }}'>
+    <link type="text/css" rel="stylesheet" href='{{ "css/codeblocks.css" | relURL }}'>
 
     <link rel="stylesheet" href="/css/codemirror/codemirror.css">
     <link rel="stylesheet" href="/css/codemirror/theme/monokai.css">
 
     <!-- Spoilers stylesheet -->
-    <link rel="stylesheet" href='{{ "css/spoiler.css" | absURL }}'>
+    <link rel="stylesheet" href='{{ "css/spoiler.css" | relURL }}'>
 
     <!-- Video stylesheet -->
-    <link rel="stylesheet" href='{{ "css/video.css" | absURL }}'>
+    <link rel="stylesheet" href='{{ "css/video.css" | relURL }}'>
 
     <!-- Highlighting boxes -->
-    <link rel="stylesheet" href='{{ "css/highlight_boxes.css" | absURL }}'>
+    <link rel="stylesheet" href='{{ "css/highlight_boxes.css" | relURL }}'>
 
     <!-- Style defined in the site config file -->
     {{- partial "personalized_css.html" . -}}

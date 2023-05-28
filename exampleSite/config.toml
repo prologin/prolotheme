@@ -1,0 +1,27 @@
+baseURL = ""
+languageCode = "fr-fr"
+title = "Prologin Theme"
+theme = "hugo-base-theme"
+
+[markup]
+    # Table of content level
+    [markup.tableOfContents]
+        endLevel = 2
+        ordered = false
+        startLevel = 1
+
+    # Display lines number in simple code blocks
+    [markup.highlight]
+        lineNos = true
+
+# Allow having shortcode inside other shortcodes
+[markup.goldmark.renderer]
+    unsafe = true
+
+[params.style]
+    primaryColor = "#131325"
+    secondaryColor = "#dd3737"
+    headerFont = "Courier"
+    colorScheme = ["#dd3737", "#f59c2e", "#314658"]
+    menuOffset = 10
+

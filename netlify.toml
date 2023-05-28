@@ -1,0 +1,6 @@
+[build]
+    publish = "exampleSite/public"
+    command = "make dependencies && hugo --config exampleSite/config.toml --contentDir exampleSite/content --themesDir ../ --theme repo --destination exampleSite/public"
+
+[build.environment]
+    HUGO_VERSION = "0.111.3"

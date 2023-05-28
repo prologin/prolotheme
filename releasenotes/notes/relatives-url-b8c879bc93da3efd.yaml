@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Use relative URLs instead of absolutes for static files
