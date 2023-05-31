@@ -1,0 +1,72 @@
+.codestep {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.codestep-code {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+}
+
+.codestep-pre {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.codestep-content {
+    background-color: var(--bg-codeblock-color);
+    border-radius: 10px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+    line-height: 1.2em;
+    margin: -10px;
+    padding: 10px;
+
+    width: 100%;
+    height: 100%;
+
+    overflow-x: scroll;
+}
+
+.codestep-block div {
+    display: flex;
+    opacity: 1;
+    margin-top: -0.6em;
+}
+
+.codestep-block td {
+    min-width: 39px;
+    background-color: var(--bg-codeblock-color);
+}
+
+.codestep-block-hidden {
+    opacity: 0.1;
+}
+
+.codestep-arrow {
+    cursor: pointer;
+    margin: 10px;
+    width: 24px;
+    min-width: 24px;
+}
+
+.codestep-desc {
+    color: white;
+    display: none;
+    padding: 10px 2.5em;
+    margin-top: -1em;
+    text-align: center;
+    height: 10%;
+}
+
+.codestep-desc code {
+    background-color: var(--bg-codeblock-color);
+}

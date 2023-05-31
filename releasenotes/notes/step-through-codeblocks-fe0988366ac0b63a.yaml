@@ -1,0 +1,25 @@
+---
+features:
+  - |
+    Add shortcodes to build step-through codeblocks.
+
+    Usage
+    ```
+    {{< codestep steps=2 lang="py" >}}
+
+    {{< codestep-block >}}
+    if x < 2
+        print("lower")
+    {{< /codestep-block desc="print 'lower' if x < 2" >}}
+
+    {{< codestep-block desc="otherwise print 'greater'" >}}
+    else
+        print("greater")
+    {{< /codestep-block >}}
+
+    {{< /codestep >}}
+    ```
+
+    Parameters `steps` and `lang` are used to determine the number of steps
+    and the language of the codeblock.
+    The parameter `desc` used for `codestep-block` is optional.

@@ -1,0 +1,12 @@
+{{- $id := (.Parent.Scratch.Get "id") -}}
+{{- $lineOff := (add (int (.Parent.Scratch.Get "lineOff")) 1) -}}
+
+<div class="codestep-block codestep-block-hidden step-{{ (int $id) }}" data-desc="{{ .Get "desc" }}">
+{{- $content := (strings.TrimLeft "\n" (strings.TrimRight "\n" (.Inner))) -}}
+{{- highlight ($content) (.Parent.Get "lang") (printf "lineNoStart=%d" $lineOff) -}}
+</div>
+
+{{- $lines := (len (split $content "\n")) -}}
+{{- .Parent.Scratch.Add "id" 1 -}}
+{{- .Parent.Scratch.Add "lineOff" $lines -}}
+{{- .Parent.Scratch.Add "descs" (slice (.Get "desc")) -}}

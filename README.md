@@ -87,6 +87,7 @@ it to make it visible (like Discord spoilers):
 ### Include videos
 
 You can include video using this shortcode:
+
 ```
 {{< video src="path/to/video" type="video/type" >}}
 ``` 
@@ -100,6 +101,44 @@ You can use `autoplay` parameter to automatically start the video (default: no):
 ```
 {{< video src="path/to/video" type="video/type" autoplay="yes" >}}
 ```
+
+
+### Step-by-step codeblockcs
+
+It is possible to display some code "step-by-step" using the `codestep`
+shortcode. Here is an example of how to use it:
+
+```
+{{< codestep steps=3 lang="py" desc="If `1 < 2`, we print **Smaller**" >}}
+
+{{< codestep-block >}}
+if 1 < 2:
+    print("Smaller")
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Otherwise, we print _Greater_" >}}
+else:
+    print("Greater")
+{{< /codestep-block >}}
+
+{{< codestep-block >}}
+print("End of code")
+{{< /codestep-block >}}
+
+{{< /codestep >}}
+```
+
+The required arguments for the `codestep` shortcode are:
+- `steps`: the number of steps (it is the number of `codestep-block`
+           sub-shortcode)
+- `lang`:  the language of the codeblock
+
+There is also an optional argument for the `codestep-block` shortcode:
+- `desc`: used to describe this specific block of code. Only displayed when the
+          related block of code is highlighted. Markdown is also supported.
+
+**/!\ If _one_ `codestep-block` in a given `codestep` has a description, they
+all need to have a description (that can be empty) /!\**
 
 
 ### Divide the subject in multiple sections

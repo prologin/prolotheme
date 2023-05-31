@@ -27,6 +27,31 @@ cas, vous pouvez ouvrir une issue sur [gitlab](https://www.gitlab.com/prologin/t
 
 > Nous avons aussi ici une citation.
 
+
+{{< codestep steps=4 lang="py" >}}
+
+{{< codestep-block desc="" >}}
+# Nous avons aussi des codeblock du type `step-by-step`
+# comme celui-ci
+{{< /codestep-block >}}
+
+{{< codestep-block desc="If `1 < 2`, we print **Smaller**" >}}
+if 1 < 2:
+    print("Smaller")
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Otherwise, we print _Greater_" >}}
+else:
+    print("Greater")
+{{< /codestep-block >}}
+
+{{< codestep-block desc="" >}}
+print("End of code")
+{{< /codestep-block >}}
+
+{{< /codestep >}}
+
+
 ```python
 def function():
     """
