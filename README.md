@@ -144,15 +144,32 @@ all need to have a description (that can be empty) /!\**
 ### Divide the subject in multiple sections
 
 A subject can be very long... It is strongly recommanded to divide it into
-multiple subsection using that kind of tag:
+multiple subsection adding this line to the front-matter of `index.md`
 
+```toml
+layout: multiple_sections
 ```
-[SECTION-BREAK]
+
+The different sections must be named `section-<number>.md` and
+placed in the same directory as `index.md`.
+
+In each section file, the following front matter must be added:
+
+```toml
+---
+show_toc: true/false
+---
 ```
 
-**/!\ Remember to leave at least one blank line before and after the tag to avoid
-rendering problems /!\**
+If the value `show_toc` is set to `true`, the section will be displayed with a
+table of content.
 
+When each sections have a relatively small table of contents, it is possible
+to show only *one* table for the full subject.
+
+This can be enabled by adding `toc: general` to the front matter of `index.md`.
+In general mode, the table of content will always be shown, therefore, the `show_toc`
+option in each section's front matter will be ignored.
 
 ### Interactives codeblocks
 

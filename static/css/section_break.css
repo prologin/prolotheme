@@ -14,11 +14,13 @@
 }
 
 .section-button.prev-button {
-    left: clamp(40px, calc(50% - 500px), 50%);
+    --arrow-position: 32%;
+    left: clamp(40px, calc(var(--arrow-position) - 500px), 50%);
 }
 
 .section-button.next-button {
-    right: clamp(40px, calc(50% - 500px), 50%);
+    --arrow-position: 60%;
+    right: clamp(40px, calc(var(--arrow-position) - 500px), 50%);
 }
 
 .section-button svg {
@@ -31,13 +33,16 @@
 /*** Progress-Bar **/
 
 .progress-bar {
-    align-items: center;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
+
     position: sticky;
     top: 0;
     z-index: 1;
+
+    border-bottom: 1px solid #dddddd;
 }
 
 [class^=progress-bar-state] {
@@ -52,10 +57,21 @@
 
 /**** Bar Colors ***/
 .started {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .ended {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
+/**** responsive ****/
+
+@media screen and (max-width: 1400px) {
+    .section-button.prev-button {
+        left: clamp(40px, calc(50% - 500px), 50%);
+    }
+
+    .section-button.next-button {
+        right: clamp(40px, calc(50% - 500px), 50%);
+    }
+}

@@ -1,0 +1,32 @@
+---
+features:
+  - |
+    To make a subject with multiple sections, the option `layout: multiple_sections`
+    must be added to the front matter of `index.md`.
+
+    The different sections must be named `section-<number>.md` and
+    placed in the same directory as `index.md`.
+
+    In each section file, the following front matter must be added
+    ```
+    ---
+    show_toc: true/false
+    ---
+    ```
+
+    If the value `show_toc` is set to `true`, the section will be displayed with a
+    table of content.
+
+    When each sections have a relatively small table of contents, it is possible
+    to show only *one* table for the full subject.
+
+    This can be enabled by adding `toc: general` to the front matter of `index.md`.
+    In general mode, the table of content will always be shown, therefore, the `show_toc`
+    option in each section's front matter will be ignored.
+upgrade:
+  - |
+    Table of Content is now visible when using multiple sections.
+    Sections of a subject can be separated in multiple files.
+deprecations:
+  - |
+    Tag `[SECTION-BREAK]` no longer usable

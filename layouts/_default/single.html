@@ -8,7 +8,6 @@
 <script type="text/javascript" src="/js/codemirror/mode/javascript.js"></script>
 <script type="text/javascript" src="/js/codemirror/mode/htmlmixed.js"></script>
 
-<div class="progress-bar"></div>
 <div class="article-title-box">
     <h1 class="article-title">{{ .Title }}</h1>
     {{- with .Params.subtitle -}}
@@ -21,50 +20,13 @@
     {{ end }}
 </div>
 
-{{- $sectionDelimiter := "[SECTION-BREAK]" -}}
-{{- $ContentSections := split .Content $sectionDelimiter -}}
-
 <div id="article-container">
-{{- if gt (len $ContentSections) 1 -}}
-    <article class="container">
-        {{ range $i, $num := (seq (len $ContentSections)) }}
-        <a id="top"></a>
-        <div id="section-{{ $num }}">
-            {{ index $ContentSections $i | safeHTML }}
-        </div>
-        {{ end }}
-    </article>
-
-{{- else -}}
     <aside class="toc">
         <div class="toc-title">Table des matières</div>
         {{ .TableOfContents }}
     </aside>
     <article class="container">{{ .Content }}</article>
-{{- end -}}
 </div>
-
-{{ if gt (len $ContentSections) 1 }}
-<div class="section-button prev-button">
-    <svg width="40px" height="40px" viewBox="0 0 80 80" xml:space="preserve">
-        <polyline
-            fill="none" stroke="#000000" stroke-width="10"
-            stroke-linecap="round" stroke-linejoin="round"
-            points="55,75 20,40 55,5 "
-        />
-    </svg>
-</div>
-<div class="section-button next-button">
-    <svg width="40px" height="40px" viewBox="0 0 80 80" xml:space="preserve">
-        <polyline
-            fill="none" stroke="#000000" stroke-width="10"
-            stroke-linecap="round" stroke-linejoin="round"
-            points="25,75 60,40 25,5"
-        />
-    </svg>
-</div>
-
-{{ end }}
 
 <div id="imgzoom"></div>
 {{ end }}
