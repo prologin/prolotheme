@@ -6,4 +6,7 @@ subtitle: Voici un TP présentant comment fonctionne une table des matières en 
 layout: multiple_sections
 toc: general
 code_stub_url: FIXME (or not)
+tags:
+    - Exemple
+    - Exemple 2
 ---

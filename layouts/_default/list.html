@@ -36,8 +36,8 @@ header.site-header {
             {{ if .Params.Tags }}
                 <ul class="tag-list">
                     {{ range .Params.tags }}
-                    <li class="tag-item {{ lower . }}">
-                        <a href="/tags/{{ . }}">{{ . }}</a>
+                    <li class="tag-item {{ urlize . }}">
+                        <a href="/tags/{{ urlize . }}">{{ . }}</a>
                     </li>
                     {{ end }}
                 </ul>

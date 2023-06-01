@@ -1,0 +1,18 @@
+---
+issues:
+  - |
+    Since v0.112.3 of hugo, the function `.Get` used to get a specific 
+    parameter in the config file did no longer worked for some reason. It had 
+    to be fixed.
+critical:
+  - |
+    Since v0.112.3 of hugo, the function `.Get` used to get a specific 
+    parameter in the config file did no longer worked for some reason. It had 
+    to be fixed.
+fixes:
+  - |
+    The deprecated function has been replaced.
+other:
+  - |
+    Example of use in the example site has also been added, and tags with other
+    things that letters only are now also fully supported. 

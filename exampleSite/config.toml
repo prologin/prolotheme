@@ -25,3 +25,6 @@ theme = "hugo-base-theme"
     colorScheme = ["#dd3737", "#f59c2e", "#314658"]
     menuOffset = 10
 
+[params.tags]
+    exemple = "green"
+    "exemple 1" = "red"
