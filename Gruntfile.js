@@ -55,18 +55,27 @@ module.exports = function(grunt) {
             try {
                 frontMatter = yaml.parse(content[1].trim());
             } catch (e) {
-                console.error(e.message);
+                console.warn("This file does not contain a front-matter.");
             }
 
             href = S(abspath).chompLeft(CONTENT_PATH_PREFIX).chompRight(filename).s;
 
             // Build Lunr index for this page
             pageIndex = {
-                title: frontMatter.title,
-                tags: frontMatter.tags,
+                title: "",
+                tags: [],
                 href: href,
-                content: S(content[2]).trim().stripTags().stripPunctuation().s
+                content: S(content[0]).trim().stripTags().stripPunctuation().s
             };
+
+            if (content.length > 1) {
+                pageIndex = {
+                    title: frontMatter.title,
+                    tags: frontMatter.tags,
+                    href: href,
+                    content: S(content[2]).trim().stripTags().stripPunctuation().s
+                };
+            }
 
             return pageIndex;
         };
