@@ -6,6 +6,8 @@ static/js/jquery.min.js
 static/js/skulpt-stdlib.js
 static/js/skulpt.min.js
 static/js/tex-svg.js
+static/js/lunr.min.js
+static/js/lunr/
 
 static/css/codemirror/
 

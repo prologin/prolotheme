@@ -3,10 +3,14 @@
 # dependencies of this theme
 # See the README for more details
 
+CONTENT_PATH = "exampleSite/content"
+
+deploy: CONTENT_PATH = "../../content"
 deploy: given_resources dependencies
 
 dependencies:
 	yarn install
+	-yarn searchjson --content=$(CONTENT_PATH)
 	
 	mkdir -p static/js/codemirror/mode/
 	mkdir -p static/css/codemirror/theme/
@@ -23,6 +27,7 @@ dependencies:
 	cp node_modules/jquery/dist/jquery.min.js static/js/
 	cp node_modules/skulpt/dist/skulpt.min.js node_modules/skulpt/dist/skulpt-stdlib.js static/js/
 	cp node_modules/mathjax/es5/tex-svg.js static/js/
+	cp node_modules/lunr/lunr.min.js static/js/
 
 clean_dependencies:
 	rm -rf node_modules
@@ -32,6 +37,7 @@ clean_dependencies:
 	rm -rf static/js/skulpt.min.js
 	rm -rf static/js/skulpt-stdlib.js
 	rm -rf static/js/tex-svg.js
+	rm -rf static/js/lunr.min.js
 
 given_resources:
 	# This script create zip files if 

@@ -26,7 +26,7 @@ header.site-header {
 
 <div class="container">
     <ul class="article-list">
-        {{ range .Pages.ByTitle.ByWeight }}
+        {{ range (where .Pages "Params.hidden" "ne" "true").ByTitle.ByWeight }}
         {{ if .Params.Tags }}
         <li class="article-item article-tagged-item">
         {{ else }}

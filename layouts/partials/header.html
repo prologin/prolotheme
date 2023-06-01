@@ -1,6 +1,7 @@
 <header class="site-header">
     <div class="header-home-menu">
         {{- partial "logo.html" . -}}
+        {{- partial "search-form.html" . -}}
         {{ if .Site.Menus.header }}
         <ul>
             {{- range .Site.Menus.header -}}
