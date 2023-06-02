@@ -15,7 +15,7 @@
                     liTag = '<li class="article-item article-tagged-item">';
                     liContent += '<ul class="tag-list">';
                     for (const tag in item.tags) {
-                        liContent += '<li class="tag-item "' + item.tags[tag] + '><a href="/tags/' +
+                        liContent += '<li class="tag-item ' + item.tags[tag] + '"><a href="/tags/' +
                             item.tags[tag] +'">' + item.tags[tag] + '</a></li>';
                     }
                     liContent += '</ul>'
