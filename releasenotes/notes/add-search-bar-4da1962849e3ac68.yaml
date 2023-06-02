@@ -2,3 +2,7 @@
 features:
   - |
     Add a research bar to the menu header.
+other:
+  - |
+    Create 'hidden' tag to hide search-result page from subject list.
+    Tag added to front-matter of 'search/index.md'
