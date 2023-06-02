@@ -20,6 +20,18 @@ cas, vous pouvez ouvrir une issue sur [gitlab](https://www.gitlab.com/prologin/t
 
 > Nous avons aussi ici une citation.
 
+```python
+def function():
+    """
+    Nous avons ici un code block python que les participantes peuvent copier
+    directement grâce au bouton prévu à cet effet.
+
+    De très nombreux langages sont pris en compte dans cette coloration
+    syntaxique.
+    """
+    print("Un TP d'exemple qui sert aussi de cheat-sheet")
+```
+
 {{< codestep steps=4 lang="py" >}}
 
 {{< codestep-block desc="" >}}
@@ -43,18 +55,6 @@ print("End of code")
 
 {{< /codestep >}}
 
-
-```python
-def function():
-    """
-    Nous avons ici un code block python que les participantes peuvent copier
-    directement grâce au bouton prévu à cet effet.
-
-    De très nombreux langages sont pris en compte dans cette coloration
-    syntaxique.
-    """
-    print("Un TP d'exemple qui sert aussi de cheat-sheet")
-```
 
 La liste complète des langages ayant une coloration syntaxique est disponible 
 [ici](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages). 
