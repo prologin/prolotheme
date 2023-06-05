@@ -32,6 +32,16 @@ def function():
     print("Un TP d'exemple qui sert aussi de cheat-sheet")
 ```
 
+```python {nocopy=true}
+def function():
+    """
+    Cette fois c'est aussi un coedblock comme le précédent, mais qui ne peut pas
+    être copié (pour faire un codeblock d'illustration de ce qui ne fonctionne
+    pas par exemple)
+    """
+    print("Un TP d'exemple qui sert aussi de cheat-sheet")
+```
+
 {{< codestep steps=4 lang="py" >}}
 
 {{< codestep-block desc="" >}}
@@ -54,7 +64,6 @@ print("End of code")
 {{< /codestep-block >}}
 
 {{< /codestep >}}
-
 
 La liste complète des langages ayant une coloration syntaxique est disponible 
 [ici](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages). 

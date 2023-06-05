@@ -1,3 +1,4 @@
+// Copy buttons function
 (function() {
   'use strict';
 
@@ -41,7 +42,7 @@
   }
 
   // Add copy button to code blocks
-  var highlightBlocks = document.querySelectorAll('.code:not(.text)');
+  var highlightBlocks = document.querySelectorAll('.copy-codeblock');
 
   Array.prototype.forEach.call(highlightBlocks, addCopyButton);
 

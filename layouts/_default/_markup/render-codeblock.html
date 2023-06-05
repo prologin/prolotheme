@@ -1,3 +1,4 @@
-<div class="code {{ (.Attributes.lang  | default .Type) }}">
+<div class="code {{ (.Attributes.lang  | default .Type) }} 
+    {{ cond (isset .Attributes "nocopy") "" "copy-codeblock" }}">
     {{- highlight .Inner (.Attributes.lang  | default .Type) | safeHTML -}}
 </div>

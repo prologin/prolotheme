@@ -204,6 +204,19 @@ print("Hello World!")
    said language found on the page.
 
 
+### Hide `Copier` button on codeblocks
+
+You can also hide the copy button if the text inside the codeblock is not
+supposed to be copied. To do so, you just have to define the argument `nocopy`
+in the codeblock definition, like this:
+
+````
+```python {nocopy=true}
+print("Blabliblou")
+```
+````
+
+
 ## Give resources to the user
 
 Zipping resources is made automatically by the `make given_resources` rule.

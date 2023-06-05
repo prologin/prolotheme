@@ -1,0 +1,12 @@
+---
+features:
+  - |
+    You can now hide the copy button if the text inside the codeblock is not
+    supposed to be copied. To do so, you just have to define the argument `nocopy`
+    in the codeblock definition, like this:
+
+    ````
+    ```python {nocopy=true}
+    print("Blabliblou")
+    ```
+    ````
