@@ -13,7 +13,7 @@ pour permettre au site de les reconnaitre.
 Cette section contient une *Table des Matières* car l'option `show_toc: true`
 a été ajoutée au front-matter de ce fichier
 
-{{% box type="info" title="Un titre" %}}
+{{% box type="info" title="Un titre _avec_ `du` **markdown**" %}}
 
 Il est aussi possible de mettre en valeur certaines parties d'un
 TP, pour que celui-ci soit plus lisible et agréable à lire. 
