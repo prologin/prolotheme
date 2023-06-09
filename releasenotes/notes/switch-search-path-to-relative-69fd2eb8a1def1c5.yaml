@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Change search-form partial to use relative path.

@@ -15,8 +15,10 @@
                     liTag = '<li class="article-item article-tagged-item">';
                     liContent += '<ul class="tag-list">';
                     for (const tag in item.tags) {
-                        liContent += '<li class="tag-item ' + item.tags[tag] + '"><a href="/tags/' +
-                            item.tags[tag] +'">' + item.tags[tag] + '</a></li>';
+                        var tagname = item.tags[tag];
+                        var tagclass = tagname.toLowerCase().replace(/[^a-z0-9_]+/gi, '').replace(' ', '')
+                        liContent += '<li class="tag-item ' + tagclass + '"><a href="/tags/' +
+                            tagclass +'">' + tagname + '</a></li>';
                     }
                     liContent += '</ul>'
                 }
