@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    When the arrows to change the displayed section is clicked, the window is 
+    now scrolled to the top of the page.

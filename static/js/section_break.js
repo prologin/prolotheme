@@ -2,7 +2,6 @@
     'use strict';
 
     function divide(sections, currentSection) {
-        location.href = '#top'
         if (currentSection < 0)
             currentSection = 0;
         if (currentSection >= sections.length)
@@ -80,9 +79,17 @@
 
     function switchBtn(sections) {
         var next = document.querySelector(".next-button")
-        next.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) + 1) });
+        next.addEventListener('click', 
+            function() {
+                divide(sections, JSON.parse(localStorage.getItem('index')) + 1);
+                window.scrollTo({ top: 0, behavior: 'smooth'});
+            });
         var prev = document.querySelector(".prev-button")
-        prev.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) - 1) });
+        prev.addEventListener('click', 
+            function() {
+                divide(sections, JSON.parse(localStorage.getItem('index')) - 1);
+                window.scrollTo({ top: 0, behavior: 'smooth'});
+            });
     }
 
     function linkToc(sections, links) {
