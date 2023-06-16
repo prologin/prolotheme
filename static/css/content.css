@@ -107,6 +107,19 @@ a.code-stub-button {
     text-decoration: none;
 }
 
+/** go-back button **/
+#go-back-button {
+    background-color: var(--primary-color);
+    border-radius: 50pt;
+    color: white;
+    display: block;
+    margin: 5em auto;
+    padding: 10pt 15pt;
+    width: fit-content;
+    text-decoration: none;
+    font-variant: small-caps;
+}
+
 /**** tags ****/
 
 .article-tagged-item h2 { 

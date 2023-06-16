@@ -25,7 +25,10 @@
         <div class="toc-title">Table des matières</div>
         {{ .TableOfContents }}
     </aside>
-    <article class="container">{{ .Content }}</article>
+    <article class="container">
+        {{ .Content }}
+        <a id="go-back-button" href='{{ ref .Page "."}}'>Retour au Menu</a>
+    </article>
 </div>
 
 <div id="imgzoom"></div>

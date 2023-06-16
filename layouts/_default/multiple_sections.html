@@ -21,25 +21,29 @@
 
 {{- $files := .Resources.Match "section*.md" -}}
 {{- $ContentSections := sort $files "Name" "asc" -}}
+{{- $ContentLen := len $ContentSections -}}
 
 <div id="article-container">
     {{ if (eq $.Params.toc "general") }}
         <aside id="toc" class="toc">
             <div class="toc-title">Table des matières</div>
-            {{ range $i, $num := (seq (len $ContentSections)) }}
+            {{ range $i, $num := (seq $ContentLen) }}
             <div class="section-link" data-section={{ $i }}>
             {{ (index $ContentSections $i).TableOfContents }}
             </div>
             {{ end }}
         </aside>
-        {{ range $i, $num := (seq (len $ContentSections)) }}
+        {{ range $i, $num := (seq $ContentLen) }}
             <article id="section-{{ $num }}" class="container">
                 <a id="top"></a>
                     {{ (index $ContentSections $i).Content }}
+                    {{ if (eq $num $ContentLen) }}     
+                    <a id="go-back-button" href='{{ ref $.Page "." }}'>Retour au Menu</a>
+                    {{ end }}
             </article>
         {{ end }}
     {{ else }}
-        {{ range $i, $num := (seq (len $ContentSections)) }}
+        {{ range $i, $num := (seq $ContentLen) }}
             {{ if (index $ContentSections $i).Params.show_toc }}
             <aside id="toc-{{ $num }}" class="toc">
                 <div class="toc-title">Table des matières</div>
@@ -49,6 +53,9 @@
             <article id="section-{{ $num }}" class="container">
                 <a id="top"></a>
                     {{ (index $ContentSections $i).Content }}
+                    {{ if (eq $num $ContentLen) }}     
+                    <a id="go-back-button" href='{{ ref $.Page "."}}'>Retour au Menu</a>
+                    {{ end }}
             </article>
         {{ end }}
     {{ end }}
