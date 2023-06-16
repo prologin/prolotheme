@@ -74,6 +74,7 @@ python et en HTML.
 
 ```codepython
 print("Une balise pour exécuter du code en python")
+print(input("Ceci est un input, entre ce que tu veux :"))
 ```
 
 ```codehtml

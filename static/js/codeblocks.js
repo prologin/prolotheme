@@ -39,6 +39,7 @@ function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
                 outTxtNode.innerHTML = outTxtNode.innerHTML + text;
             },
             read: builtinRead,
+            inputfunTakesPrompt: true,
         });
 
         (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = canvasNode;
