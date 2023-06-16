@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+<style>
+html, body {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    margin: 0;
+}
+
+#container-404 {
+    background-color: #ededed;
+    border-radius: 20pt;
+    margin: auto;
+    padding: 50pt;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+}
+
+#title-404 {
+    color: var(--primary-color);
+    font-size: 6em;
+    margin: 0;
+    margin-bottom: 10pt;
+}
+
+.message-404 {
+    font-size: 1.2em;
+}
+
+#menu-button-404 {
+    background-color: var(--secondary-color);
+    border-radius: 50pt;
+    color: white;
+    margin: 10pt;
+    padding: 5pt 15pt;
+    text-decoration: none;
+}
+</style>
+    <body>
+        {{- partial "header.html" . -}}
+        <main>
+            <div id="container-404">
+                <h2 id="title-404">404</h2>
+                <p class="message-404">Et non ! Pas de TP par ici !</p>
+                <p>En attendant, essaye à nouveau en retournant au</p>
+                <a href="/" id="menu-button-404">Menu</a>
+            </div>
+        </main>
+        <br />
+        {{- partial "footer.html" . -}}
+    </body>
+</html>
