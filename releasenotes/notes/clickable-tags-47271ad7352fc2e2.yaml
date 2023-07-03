@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    Make tags clickable (not only the text) by removing the list ul and replacing
+    it with a div full of a tags.

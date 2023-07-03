@@ -34,13 +34,11 @@ header.site-header {
         {{ end }}
             <h2>{{ .Title }}</h2>
             {{ if and (.Params.Tags) (not .Site.Params.Style.hideTags) }}
-                <ul class="tag-list">
+                <div class="tag-list">
                     {{ range .Params.tags }}
-                    <li class="tag-item {{ urlize . }}">
-                        <a href="/tags/{{ urlize . }}">{{ . }}</a>
-                    </li>
+                    <a class="tag-item {{ urlize . }}" href="/tags/{{ urlize . }}">{{ . }}</a>
                     {{ end }}
-                </ul>
+                </div>
             {{ end }}
         </li>
         {{ end }}

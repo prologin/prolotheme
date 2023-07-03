@@ -15,14 +15,14 @@
 {{ if not .Site.Params.Style.hideTags }}
                 if (item.tags !== undefined) {
                     liTag = '<li class="article-item article-tagged-item">';
-                    liContent += '<ul class="tag-list">';
+                    liContent += '<div class="tag-list">';
                     for (const tag in item.tags) {
                         var tagname = item.tags[tag];
                         var tagclass = tagname.toLowerCase().replace(/[^a-z0-9_]+/gi, '').replace(' ', '')
-                        liContent += '<li class="tag-item ' + tagclass + '"><a href="/tags/' +
-                            tagclass +'">' + tagname + '</a></li>';
+                        liContent += '<a class="tag-item ' + tagclass + '" href="/tags/' +
+                            tagclass +'">' + tagname + '</a>';
                     }
-                    liContent += '</ul>'
+                    liContent += '</div>'
                 }
 {{ end }}
 

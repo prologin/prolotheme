@@ -134,7 +134,6 @@ a.code-stub-button {
 }
 
 .tag-list {
-    list-style: none;
     display: flex;
     justify-content: center;
     padding-left: 10px;
@@ -150,9 +149,7 @@ a.code-stub-button {
     font-size: 0.6em;
     text-shadow: none;
 
-    list-style: none;
-
-    padding: 0.4em 1em;
+    padding: 0.4em 1em !important;
     margin: 0 0.5em;
 }
 
