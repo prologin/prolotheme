@@ -93,10 +93,16 @@
 
 /**** responsive ****/
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
     .toc {
         margin: 10% auto;
         position: relative;
         width: 800px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .toc {
+        width: 90%;
     }
 }

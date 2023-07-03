@@ -1,4 +1,9 @@
 /* exec */
+.highlight {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .code {
     background-color: var(--bg-codeblock-color);
     border-radius: 10px;
@@ -30,6 +35,7 @@ code:not(pre>code) {
     border-radius: 8px;
     color: #FFFFFF;
     cursor: pointer;
+    flex-shrink: 0;
     height: 40px;
     line-height: 20px;
     padding: 10px 16px;
@@ -80,4 +86,22 @@ code:not(pre>code) {
 .prolo-codeblock-result {
     color: var(--bg-color);
     margin: 20px;
+}
+
+iframe.prolo-codeblock-result {
+    background-color: white;
+    width: 95%;
+    height: 250px;
+}
+
+pre.prolo-codepython-output {
+    white-space: pre-wrap;
+}
+
+/*** responsive ***/
+
+@media screen and (max-width: 1000px) {
+    iframe.prolo-codeblock-result {
+        width: calc(100% - 40px);
+    }
 }

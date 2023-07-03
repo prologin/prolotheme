@@ -9,7 +9,7 @@ function builtinRead(x)
 }
 
 function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
-    return CodeMirror(
+    var cm = CodeMirror(
         function (elt) {
             txtAreaNode.parentNode.replaceChild(elt, txtAreaNode);
         },
@@ -21,7 +21,9 @@ function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
             theme: "monokai",
         }
     );
+    cm.setSize(null, "auto");
 
+    return cm
 }
 
 // Python code blocks
@@ -111,4 +113,15 @@ function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
     // Get all the HTML code blocks and initialize them,
     let htmlCodeBlocks = document.querySelectorAll(".prolo-codehtml");
     htmlCodeBlocks.forEach(initCodeHTML);
+})();
+
+
+// Set adaptive height for codeblocks
+(function () {
+    function changeHeightCSS(elt) {
+        elt.style.maxHeight = "300px";
+    }
+
+    var interactiveBlocks = document.querySelectorAll('.CodeMirror-scroll');
+    Array.prototype.forEach.call(interactiveBlocks, changeHeightCSS);
 })();

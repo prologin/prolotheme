@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    - There is no more blue highlight when using the copy button.
+    - The logo is now clickable
+    - Content of codeblocks with 1 lign is centered
+    - The '!' of the "Copier" button always stays on the same line
+    - The responsive is fixed and the content always stays on screen
+    - The whole menu button of each subject is now clickable
+    - The interactive codeblocks adapt their size to the content
