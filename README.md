@@ -14,46 +14,6 @@ The Makefile has multiple useful rules needed for developing your website:
 Before deploying the website, you need to call the `deploy` rule to make sure
 that your website will work correctly.
 
-
-## How to customize this theme?
-
-Every available customization can be made via variables in the hugo config file.
-All the described variables have to be under the `params` section. 
-
-
-### Add your logo and your favicon
-
-1. Store them in the `static` folder in the root directory of the hugo site (not the _theme_ static directory)
-2. Fill the fields `logo` and `favicon` with the hugo paths of your files
-3. Fill the field `logoText` to setup alternate text for your logo
-
-
-### Change tags color
-
-To change the default tag color, you need to add colors associated to your tags
-under the section `params.tags`.
-
-For example, to define the color of the tag `Example` to _green_ (case doesn't matter), you
-need to add `example = "green"` under the sections `params.tags`.
-
-
-### Customize CSS
-
-The following fields need to be written under the subsection `style` (all the
-values must be in the CSS classical format):
-
-- `primaryColor`   : Change the primary color of the website (at least site
-                     header and table of content color)
-- `secondaryColor` : Change the secondary color of the website (at least
-                     _codeblocks_ buttons)
-- `tertiaryColor`  : Change the tertiary color of the website (other buttons)
-- `headerFont`     : Change font used for the title of the site header
-- `colorScheme`    : Generate colored item list using those colors. The given
-                     colors must be a list
-- `menuOffset`     : Change the max random offset of the items in the list
-                     layout
-
-
 ## Content Features
 
 ### Highlight boxes
@@ -69,10 +29,14 @@ You also can add a title to your boxes using the `title` parameter:
 
 ```
 {{% box type="a required type" title="A optional title" %}}
+
 > A quote inside a box
 Your text inside the box.
 {{% /box %}}
 ```
+
+**/!\ You need to leave at least one blank line after the box opening tag,
+    otherwise its content is not markdownified /!\**
 
 
 ### Spoiler text
@@ -112,7 +76,7 @@ shortcode. Here is an example of how to use it:
 ```
 {{< codestep steps=3 lang="py" desc="If `1 < 2`, we print **Smaller**" >}}
 
-{{< codestep-block >}}
+{{< codestep-block desc="" >}}
 if 1 < 2:
     print("Smaller")
 {{< /codestep-block >}}
@@ -122,7 +86,7 @@ else:
     print("Greater")
 {{< /codestep-block >}}
 
-{{< codestep-block >}}
+{{< codestep-block desc="" >}}
 print("End of code")
 {{< /codestep-block >}}
 
@@ -144,7 +108,7 @@ all need to have a description (that can be empty) /!\**
 
 ### Divide the subject in multiple sections
 
-A subject can be very long... It is strongly recommanded to divide it into
+A subject can be very long... It is strongly recommended to divide it into
 multiple subsection adding this line to the front-matter of `index.md`
 
 ```toml
@@ -171,38 +135,6 @@ to show only *one* table for the full subject.
 This can be enabled by adding `toc: general` to the front matter of `index.md`.
 In general mode, the table of content will always be shown, therefore, the `show_toc`
 option in each section's front matter will be ignored.
-
-### Interactives codeblocks
-
-You can generate interactives codeblocks (to let users directly run their code
-on the website) adding the `code<lang>` tag in the codeblock types.   
-
-For example, here is how to create interactive Python codeblocks:
-
-````
-```codepython
-# Some Python code
-print("Hello World!")
-```
-````
-
-#### Supported languages
-
-- Python (Turtle included)
-- HTML
-
-
-#### Add a new language support
-
-1. Add a line in `dependencies` make rule to copy the javascript file related to the language you want to
-   add. Available languages can be found [here](https://www-sop.inria.fr/teams/marelle/advanced-coq-16-17/jscoq/external/CodeMirror/mode/)
-2. Link the script of the _CodeMirror Mode_ in `layouts/_default/single.html`
-3. Create a new file named `layouts/_default/_markup/render-codeblock-code<lang>.html` by copying an existing one.
-    Change the class of the main `div` and modify the output tags based on what you need.
-4. In the file `codeblocks.js`, add a new `(function(){})()` block and define
-   the functions `runCode<lang>()` and `initCode<lang>()` inside of the brackets.
-   After defining them, you must call `initCode<lang>()` on each codeblock of
-   said language found on the page.
 
 
 ### Hide `Copier` button on codeblocks
@@ -239,3 +171,87 @@ front matter like this:
 # If only one file is given
 ./resources/given_resources/<name_of_file>
 ```
+
+
+### Interactives codeblocks
+
+You can generate interactives codeblocks (to let users directly run their code
+on the website) adding the `code<lang>` tag in the codeblock types.   
+
+For example, here is how to create interactive Python codeblocks:
+
+````
+```codepython
+# Some Python code
+print("Hello World!")
+```
+````
+
+#### Supported languages
+
+- Python (Turtle included)
+- HTML
+
+
+#### Technical details
+
+The library used **for the editor only** is `CodeMirror` v5, and the official documentation can be found
+[here](https://codemirror.net/5/doc/manual.html).
+
+The library used **for executing python code** is Skulpt (doc can be found
+[here](https://skulpt.org/docs/index.html)).
+
+
+#### Add a new language support
+
+1. Add a line in `dependencies` make rule to copy the javascript file related to the language you want to
+   add. Available languages can be found [here](https://www-sop.inria.fr/teams/marelle/advanced-coq-16-17/jscoq/external/CodeMirror/mode/)
+2. Link the script of the _CodeMirror Mode_ in `layouts/_default/single.html`
+3. Create a new file named `layouts/_default/_markup/render-codeblock-code<lang>.html` by copying an existing one.
+    Change the class of the main `div` and modify the output tags based on what you need.
+4. In the file `codeblocks.js`, add a new `(function(){})()` block and define
+   the functions `runCode<lang>()` and `initCode<lang>()` inside of the brackets.
+   After defining them, you must call `initCode<lang>()` on each codeblock of
+   said language found on the page.
+
+
+
+
+## How to customize this theme?
+
+Every available customization can be made via variables in the hugo config file.
+All the described variables have to be under the `params` section. 
+
+
+### Add your logo and your favicon
+
+1. Store them in the `static` folder in the root directory of the hugo site (not the _theme_ static directory)
+2. Fill the fields `logo` and `favicon` with the hugo paths of your files
+3. Fill the field `logoText` to setup alternate text for your logo
+
+
+### Change tags color
+
+To change the default tag color, you need to add colors associated to your tags
+under the section `params.tags`.
+
+For example, to define the color of the tag `Example` to _green_ (case doesn't matter), you
+need to add `example = "green"` under the sections `params.tags`.
+
+
+### Customize CSS
+
+The following fields need to be written under the subsection `style` (all the
+values must be in the CSS classical format):
+
+- `primaryColor`   : Change the primary color of the website (at least site
+                     header and table of content color)
+- `secondaryColor` : Change the secondary color of the website (at least
+                     _codeblocks_ buttons)
+- `tertiaryColor`  : Change the tertiary color of the website (other buttons)
+- `headerFont`     : Change font used for the title of the site header
+- `colorScheme`    : Generate colored item list using those colors. The given
+                     colors must be a list
+- `menuOffset`     : Change the max random offset of the items in the list
+                     layout
+
