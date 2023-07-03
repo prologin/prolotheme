@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix automatic upscroll on section change

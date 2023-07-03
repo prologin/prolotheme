@@ -81,14 +81,14 @@
         var next = document.querySelector(".next-button")
         next.addEventListener('click', 
             function() {
-                divide(sections, JSON.parse(localStorage.getItem('index')) + 1);
                 window.scrollTo({ top: 0, behavior: 'smooth'});
+                divide(sections, JSON.parse(localStorage.getItem('index')) + 1);
             });
         var prev = document.querySelector(".prev-button")
         prev.addEventListener('click', 
             function() {
-                divide(sections, JSON.parse(localStorage.getItem('index')) - 1);
                 window.scrollTo({ top: 0, behavior: 'smooth'});
+                divide(sections, JSON.parse(localStorage.getItem('index')) - 1);
             });
     }
 
