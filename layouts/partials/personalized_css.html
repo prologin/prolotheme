@@ -12,6 +12,12 @@
 }
 {{ end }}
 
+{{ with .Site.Params.Style.tertiaryColor }}
+:root {
+    --tertiary-color: {{ . }};
+}
+{{ end }}
+
 {{ with .Site.Params.Style.headerFont }}
 h1.site-title {
     font-family: {{ . }};

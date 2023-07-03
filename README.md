@@ -46,6 +46,7 @@ values must be in the CSS classical format):
                      header and table of content color)
 - `secondaryColor` : Change the secondary color of the website (at least
                      _codeblocks_ buttons)
+- `tertiaryColor`  : Change the tertiary color of the website (other buttons)
 - `headerFont`     : Change font used for the title of the site header
 - `colorScheme`    : Generate colored item list using those colors. The given
                      colors must be a list

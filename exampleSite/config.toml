@@ -21,6 +21,7 @@ theme = "hugo-base-theme"
 [params.style]
     primaryColor = "#131325"
     secondaryColor = "#dd3737"
+    tertiaryColor = "#EF5B5B"
     headerFont = "Courier"
     colorScheme = ["#dd3737", "#f59c2e", "#314658"]
     menuOffset = 10
