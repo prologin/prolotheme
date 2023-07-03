@@ -238,6 +238,12 @@ under the section `params.tags`.
 For example, to define the color of the tag `Example` to _green_ (case doesn't matter), you
 need to add `example = "green"` under the sections `params.tags`.
 
+### Hide tags
+
+If you want to leave tags in your subject (to allow the search engine to use them),
+but don't want them to appear, you can set `hideTags` to true under the
+`params.style` subsection.
+
 
 ### Customize CSS
 

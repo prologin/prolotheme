@@ -27,13 +27,13 @@ header.site-header {
 <div class="container">
     <ul class="article-list">
         {{ range (where .Pages "Params.hidden" "ne" "true").ByTitle.ByWeight }}
-        {{ if .Params.Tags }}
+        {{ if and (.Params.Tags) (not .Site.Params.Style.hideTags) }}
         <li onclick="location.href = {{ .RelPermalink }}" class="article-item article-tagged-item">
         {{ else }}
         <li onclick="location.href = {{ .RelPermalink }}" class="article-item">
         {{ end }}
             <h2>{{ .Title }}</h2>
-            {{ if .Params.Tags }}
+            {{ if and (.Params.Tags) (not .Site.Params.Style.hideTags) }}
                 <ul class="tag-list">
                     {{ range .Params.tags }}
                     <li class="tag-item {{ urlize . }}">
@@ -47,3 +47,4 @@ header.site-header {
     </ul>
 </div>
 {{ end }}
+

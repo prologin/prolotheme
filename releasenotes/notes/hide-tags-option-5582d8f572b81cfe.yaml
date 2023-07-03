@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add `hideTags` parameter to prevent hugo from displaying tags.

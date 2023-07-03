@@ -1,3 +1,4 @@
+<script type="text/javascript">
 (function() {
     'use strict';
 
@@ -11,6 +12,7 @@
                 var liContent = '<h2><a href="' + item.href + '">' + item.title + '</a></h2>';
                 var liTag = '<li class="article-item">';
 
+{{ if not .Site.Params.Style.hideTags }}
                 if (item.tags !== undefined) {
                     liTag = '<li class="article-item article-tagged-item">';
                     liContent += '<ul class="tag-list">';
@@ -22,6 +24,7 @@
                     }
                     liContent += '</ul>'
                 }
+{{ end }}
 
                 resultList += liTag + liContent + '</li>'
             }
@@ -73,3 +76,4 @@
         });
     }
 })();
+</script>
