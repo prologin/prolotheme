@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    - Only set text to justified instead of full page content
+    - Increase boxes padding

@@ -22,8 +22,6 @@ body {
 
 main {
     margin-bottom: 200px;
-    text-align: justify;
-    text-justify: inter-word;
 }
 
 [id^=section] {
@@ -42,6 +40,11 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 2em;
     margin-bottom: 1em;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* Text-style: blockquotes */
