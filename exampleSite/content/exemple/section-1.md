@@ -47,6 +47,7 @@ def function():
 {{< codestep-block desc="" >}}
 # Nous avons aussi des codeblock du type `step-by-step`
 # comme celui-ci
+
 {{< /codestep-block >}}
 
 {{< codestep-block desc="If `1 < 2`, we print **Smaller**" >}}
@@ -60,6 +61,7 @@ else:
 {{< /codestep-block >}}
 
 {{< codestep-block desc="" >}}
+
 print("End of code")
 {{< /codestep-block >}}
 

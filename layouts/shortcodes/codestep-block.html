@@ -2,7 +2,7 @@
 {{- $lineOff := (add (int (.Parent.Scratch.Get "lineOff")) 1) -}}
 
 <div class="codestep-block codestep-block-hidden step-{{ (int $id) }}" data-desc="{{ .Get "desc" }}">
-{{- $content := (strings.TrimLeft "\n" (strings.TrimRight "\n" (.Inner))) -}}
+{{- $content := substr .Inner 1 -}}
 {{- highlight ($content) (.Parent.Get "lang") (printf "lineNoStart=%d" $lineOff) -}}
 </div>
 

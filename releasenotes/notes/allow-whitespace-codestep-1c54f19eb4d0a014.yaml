@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Allow for whitespace inside codestep blocks
