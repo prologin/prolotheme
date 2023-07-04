@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Update codestep arrow style (symbol and color)
