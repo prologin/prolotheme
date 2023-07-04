@@ -13,12 +13,28 @@
     function displayBlock(codeblock, newI) {
         var blocks = codeblock.querySelectorAll(".codestep-block");
         var descs = codeblock.querySelectorAll(".codestep-desc");
-        var oldI = codeblock.dataset.step;
+        var oldI = parseInt(codeblock.dataset.step);
 
-        blocks[oldI].className = "codestep-block codestep-block-hidden step-" + oldI;
-        blocks[newI].className = "codestep-block step-" + newI;
-        descs[oldI].style.display = "none";
-        descs[newI].style.display = "block";
+        var maxStep = parseInt(codeblock.dataset.maxStep);
+
+        if (newI === maxStep) {
+            for (let i = 0; i < maxStep; i++) {
+                blocks[i].className = "codestep-block step-" + i;
+            }
+            descs[maxStep - 1].style.display = "none";
+        }
+        else if (oldI === maxStep) {
+            for (let i = 0; i < maxStep - 1; i++) {
+                blocks[i].className = "codestep-block codestep-block-hidden step-" + i;
+            }
+            descs[maxStep - 1].style.display = "block";
+        }
+        else {
+            blocks[oldI].className = "codestep-block codestep-block-hidden step-" + oldI;
+            blocks[newI].className = "codestep-block step-" + newI;
+            descs[oldI].style.display = "none";
+            descs[newI].style.display = "block";
+        }
 
         codeblock.setAttribute("data-step", newI);
 
@@ -26,7 +42,7 @@
         var next = codeblock.querySelector(".codestep-next-button");
         if (oldI < newI) {
             prev.firstElementChild.style.display = "block";
-            if (newI === parseInt(codeblock.dataset.maxStep) - 1)
+            if (newI === maxStep)
                 next.firstElementChild.style.display = "none";
         }
         else {

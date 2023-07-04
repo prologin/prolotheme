@@ -1,7 +1,7 @@
 {{- $id := (.Parent.Scratch.Get "id") -}}
 {{- $lineOff := (add (int (.Parent.Scratch.Get "lineOff")) 1) -}}
 
-<div class="codestep-block codestep-block-hidden step-{{ (int $id) }}" data-desc="{{ .Get "desc" }}">
+<div class="codestep-block codestep-block-hidden step-{{ (int $id) }}" style="z-index: {{ sub 100 (int $id) }}" data-desc="{{ .Get "desc" }}">
 {{- $content := substr .Inner 1 -}}
 {{- highlight ($content) (.Parent.Get "lang") (printf "lineNoStart=%d" $lineOff) -}}
 </div>
