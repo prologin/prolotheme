@@ -39,6 +39,11 @@
                     {{ (index $ContentSections $i).Content }}
                     {{ if (eq $num $ContentLen) }}     
                     <a id="go-back-button" href='{{ ref $.Page "." }}'>Retour au Menu</a>
+                    <div id="confettis-container">
+                        {{ range $i := (seq 100) }}
+                        <i class="confetti"></i>
+                        {{ end }}
+                    </div>
                     {{ end }}
             </article>
         {{ end }}
@@ -55,6 +60,11 @@
                     {{ (index $ContentSections $i).Content }}
                     {{ if (eq $num $ContentLen) }}     
                     <a id="go-back-button" href='{{ ref $.Page "."}}'>Retour au Menu</a>
+                    <div id="confettis-container">
+                        {{ range $i := (seq 100) }}
+                        <i class="confetti"></i>
+                        {{ end }}
+                    </div>
                     {{ end }}
             </article>
         {{ end }}

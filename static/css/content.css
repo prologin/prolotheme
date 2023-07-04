@@ -113,7 +113,8 @@ a.code-stub-button {
     text-decoration: none;
 }
 
-/** go-back button **/
+/** end of subject **/
+
 #go-back-button {
     background-color: var(--primary-color);
     border-radius: 50pt;
@@ -124,6 +125,25 @@ a.code-stub-button {
     width: fit-content;
     text-decoration: none;
     font-variant: small-caps;
+}
+
+#confettis-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+}
+
+.confetti {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 0;
+    width: 10px;
+    height: 20px;
+    background: red;
+    opacity: 0;
 }
 
 /**** tags ****/

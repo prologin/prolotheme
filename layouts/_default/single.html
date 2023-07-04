@@ -28,6 +28,11 @@
     <article class="container">
         {{ .Content }}
         <a id="go-back-button" href='{{ ref .Page "."}}'>Retour au Menu</a>
+        <div id="confettis-container">
+            {{ range $i := (seq 100) }}
+            <i class="confetti"></i>
+            {{ end }}
+        </div>
     </article>
 </div>
 
