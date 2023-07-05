@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    The subtitle is now centered (the subtitle wasn't centered due to commit cfa3f8fd4b5e20260b215f561bbe6f0825890e98)
