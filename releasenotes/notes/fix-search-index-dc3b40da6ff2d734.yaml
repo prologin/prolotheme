@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix search index generation when subject contains vertical bar

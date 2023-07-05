@@ -68,7 +68,7 @@ module.exports = function(grunt) {
                 content: S(content[0]).trim().stripTags().stripPunctuation().s
             };
 
-            if (content.length > 1) {
+            if (frontMatter !== undefined) {
                 pageIndex = {
                     title: frontMatter.title,
                     tags: frontMatter.tags,
