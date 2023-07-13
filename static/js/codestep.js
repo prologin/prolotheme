@@ -1,15 +1,6 @@
 (function() {
     'use strict';
 
-    function setupBlocks(codeblocks) {
-        for (const cb of codeblocks) {
-            var blocks = cb.querySelectorAll(".codestep-block");
-            blocks[0].className = "codestep-block step-0";
-            var descs = cb.querySelectorAll(".codestep-desc");
-            descs[0].style.display = "block";
-        }
-    }
-
     function displayBlock(codeblock, newI) {
         var blocks = codeblock.querySelectorAll(".codestep-block");
         var descs = codeblock.querySelectorAll(".codestep-desc");
@@ -17,17 +8,18 @@
 
         var maxStep = parseInt(codeblock.dataset.maxStep);
 
-        if (newI === maxStep) {
+        if (newI === maxStep || newI === -1) {
             for (let i = 0; i < maxStep; i++) {
                 blocks[i].className = "codestep-block step-" + i;
             }
             descs[maxStep - 1].style.display = "none";
         }
-        else if (oldI === maxStep) {
-            for (let i = 0; i < maxStep - 1; i++) {
+        else if (oldI === maxStep || oldI === -1) {
+            for (let i = 0; i < maxStep; i++) {
                 blocks[i].className = "codestep-block codestep-block-hidden step-" + i;
             }
-            descs[maxStep - 1].style.display = "block";
+            blocks[newI].className = "codestep-block step-" + newI;
+            descs[newI].style.display = "block";
         }
         else {
             blocks[oldI].className = "codestep-block codestep-block-hidden step-" + oldI;
@@ -47,7 +39,7 @@
         }
         else {
             next.firstElementChild.style.display = "block";
-            if (newI === 0)
+            if (newI === -1)
                 prev.firstElementChild.style.display = "none";
         }
     }
@@ -72,5 +64,4 @@
 
     var codesteps = document.querySelectorAll(".codestep");
     setupButtons(codesteps);
-    setupBlocks(codesteps);
 })();

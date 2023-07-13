@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Show full code on first step of codestep
+upgrade:
+  - |
+    Augment hidden blocks opacity
