@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Trim last \n from codestep blocks
