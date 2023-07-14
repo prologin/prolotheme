@@ -39,6 +39,7 @@ clean_dependencies:
 	rm -rf static/js/tex-svg.js
 	rm -rf static/js/lunr.min.js
 
+given_resources: SHELL := /bin/bash
 given_resources:
 	# This script create zip files if 
 	# there is multiple given resources
@@ -49,7 +50,7 @@ given_resources:
 	# runned by hugo sites that use this theme #
 	############################################
 	
-	$(eval resources := $(shell find ../../content/ -type d -name given_resources))
+	$(eval resources := $(shell find ${CONTENT_PATH} -type d -name given_resources))
 
 	$(foreach i,$(resources),\
 		$(eval nb_dirs := $(shell find $i/* -maxdepth 0 -type d | wc -l))\
@@ -63,10 +64,10 @@ given_resources:
 
 
 clean_resources:
-	$(foreach i,$(shell find ../../content/ -type f -name "*.zip"),$(RM) $i)
+	$(foreach i,$(shell find ${CONTENT_PATH} -type f -name "*.zip"),$(RM) $i)
 
 
-preview: dependencies
+preview: given_resources dependencies
 	hugo --config exampleSite/config.toml --contentDir exampleSite/content --themesDir ../ --theme hugo-base-theme server
 
 

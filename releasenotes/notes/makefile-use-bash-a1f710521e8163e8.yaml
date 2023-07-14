@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    Force makefile to use bash instead of sh. Fixes given resources generation problem
+    Make given_resources rule use CONTENT_PATH variable
