@@ -1,13 +1,12 @@
 <div class="prolo-codeblock prolo-codehtml">
-    Écris ton code ici :
+    {{ markdownify "Appuie sur le bouton `Run` pour exécuter le code python ci-dessous" }}
     <div class="prolo-codeblock-input-box" style="color: white; display: block">
         <textarea class="prolo-codeblock-input" cols="90" rows="5">
             {{- .Inner -}}
         </textarea>
         <button class="prolo-codeblock-run-btn" type="button">Run</button>
-        Le résultat :
-        <br />
     </div>
+    Le résultat :
     <iframe
         class="prolo-codeblock-result"
     ></iframe>

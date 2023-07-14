@@ -20,7 +20,7 @@
 }
 
 code:not(pre>code) {
-    background-color: #CECECE;
+    background-color: var(--bg-codeblock-color);
     border: 1px solid #BCBEC0;
     border-radius: 5px;
     font: .75em Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -95,6 +95,10 @@ iframe.prolo-codeblock-result {
 }
 
 pre.prolo-codepython-output {
+    background-color: var(--bg-codeblock-color);
+    padding: 0 10px;
+    margin: 0 -10px;
+    flex-grow: 1;
     white-space: pre-wrap;
 }
 
