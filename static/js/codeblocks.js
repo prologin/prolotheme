@@ -8,20 +8,19 @@ function builtinRead(x)
     return Sk.builtinFiles["files"][x];
 }
 
-function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
-    var cm = CodeMirror(
-        function (elt) {
-            txtAreaNode.parentNode.replaceChild(elt, txtAreaNode);
-        },
+function createCodeMirrorEditor(txtAreaNode, lang) {
+    // Create editor
+    var cm = CodeMirror.fromTextArea(txtAreaNode,
         {
-            value: txtAreaNode.value,
             mode: lang,
             lineNumbers: true,
             tabSize: 4,
             theme: "monokai",
         }
     );
-    cm.setSize(null, "auto");
+
+    // Set dynamic height
+    cm.setSize(null, "auto"); 
 
     return cm
 }
@@ -68,7 +67,7 @@ function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
 
         // Replace the text-area with a CodeMirror block,
         // which includes line numbers and syntax highlighting.
-        const codeMirror = getCodeMirrorFromTxtArea(textArea, "python");
+        const codeMirror = createCodeMirrorEditor(textArea, "python");
 
         runBtn.addEventListener(
             "click",
@@ -101,7 +100,7 @@ function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
 
         // Replace the text-area with a CodeMirror block,
         // which includes line numbers and syntax highlighting.
-        const codeMirror = getCodeMirrorFromTxtArea(textArea, "htmlmixed");
+        const codeMirror = createCodeMirrorEditor(textArea, "htmlmixed");
 
         runBtn.addEventListener(
             "click",
@@ -113,15 +112,4 @@ function getCodeMirrorFromTxtArea(txtAreaNode, lang) {
     // Get all the HTML code blocks and initialize them,
     let htmlCodeBlocks = document.querySelectorAll(".prolo-codehtml");
     htmlCodeBlocks.forEach(initCodeHTML);
-})();
-
-
-// Set adaptive height for codeblocks
-(function () {
-    function changeHeightCSS(elt) {
-        elt.style.maxHeight = "300px";
-    }
-
-    var interactiveBlocks = document.querySelectorAll('.CodeMirror-scroll');
-    Array.prototype.forEach.call(interactiveBlocks, changeHeightCSS);
 })();

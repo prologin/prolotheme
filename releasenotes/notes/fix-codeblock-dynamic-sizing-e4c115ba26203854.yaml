@@ -1,0 +1,6 @@
+---
+upgrade:
+  - |
+    Rename getCodeMirrorFromTxtArea for more a fitting name and use function
+    defined by the lib to create a CodeMirror instance.
+    Remove max height from codeblocks.
