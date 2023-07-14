@@ -68,6 +68,22 @@
     height: 10%;
 }
 
-.codestep-desc code {
+.codestep code {
     background-color: var(--bg-codeblock-color);
+}
+
+.codestep-result {
+    color: white;
+    position: relative;
+    padding: 0 20px;
+    padding-bottom: 1px;
+    min-height: 20px;
+}
+
+.codestep-result .prolo-codeblock-result {
+    margin-top: 20px;
+}
+
+.codestep-result .prolo-codeblock-run-btn {
+    top: -18px;
 }

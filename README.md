@@ -98,6 +98,9 @@ The required arguments for the `codestep` shortcode are:
            sub-shortcode)
 - `lang`:  the language of the codeblock
 
+There is one optional argument for the `codestep` shortcode:
+- `run`: active the run button if set to `true`
+
 There is also an optional argument for the `codestep-block` shortcode:
 - `desc`: used to describe this specific block of code. Only displayed when the
           related block of code is highlighted. Markdown is also supported.

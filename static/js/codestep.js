@@ -1,10 +1,105 @@
+// Run block
+// Found here: https://github.com/skulpt/skulpt/blob/master/HACKING.md
+function builtinRead(x)
+{
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+        throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+}
+
+function runCodestep(code, outTxtNode, canvasNode) {
+    outTxtNode.innerHTML = "";
+    Sk.pre = "output";
+
+    Sk.configure({
+        // Output appends on the "codeOut" html element.
+        output: function (text) {
+            outTxtNode.innerHTML = outTxtNode.innerHTML + text;
+        },
+        read: builtinRead,
+        inputfunTakesPrompt: true,
+    });
+
+    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = canvasNode;
+    var myPromise = Sk.misceval.asyncToPromise(function () {
+        return Sk.importMainWithBody("<stdin>", false, code, true);
+    });
+    myPromise.then(
+        function (mod) {
+            console.log("success");
+        },
+        function (err) {
+            console.log("failed");
+            outTxtNode.innerText = err.toString();
+        }
+    );
+}
+
+function getText(codestep) {
+    var blocks = codestep.querySelectorAll(".codestep-block");
+    var code = ""
+    for (const b of blocks) {
+        var text = b.querySelector(".language-py").innerText;
+        code += text + "\n";
+    }
+
+    return code;
+}
+
+// Step by step behaviour
 (function() {
     'use strict';
+
+    var lineNb = 0;
+
+    function resizeNumbers(numberEl) {
+        var digitNb = lineNb.toString().length;
+        numberEl.style.display = "block";
+        numberEl.style.width = `${digitNb}em`;
+        numberEl.style.paddingLeft = "0.2em";
+
+        var spans = numberEl.querySelectorAll("span");
+        for (const span of spans) {
+            span.style.marginRight = 0;
+            span.style.float = "right";
+        }
+    }
+
+    function setupBlocks(codeblocks) {
+        for (const cb of codeblocks) {
+            var blocks = cb.querySelectorAll(".codestep-block");
+            blocks[0].className = "codestep-block step-0";
+            var descs = cb.querySelectorAll(".codestep-desc");
+            descs[0].style.display = "block";
+
+            lineNb = cb.querySelectorAll("span[style=\"display:flex;\"]").length;
+            var numbers = [...blocks].map(function(e) {
+                return e.querySelector("td").querySelector("code");
+            });
+            numbers.forEach(resizeNumbers);
+
+            var runButton = cb.querySelector(".prolo-codeblock-run-btn");
+            var outTxt = cb.querySelector(".prolo-codepython-output");
+            var outCanvas = cb.querySelector(".prolo-codepython-canvas");
+
+            var text = getText(cb);
+            runButton.addEventListener(
+                "click",
+                function() {runCodestep(text, outTxt, outCanvas);}
+            );
+
+            var result = cb.querySelector(".codestep-result");
+            runButton.style.display = "none";
+            result.style.display = "none";
+        }
+    }
 
     function displayBlock(codeblock, newI) {
         var blocks = codeblock.querySelectorAll(".codestep-block");
         var descs = codeblock.querySelectorAll(".codestep-desc");
         var oldI = parseInt(codeblock.dataset.step);
+        var runButton = codeblock.querySelector(".prolo-codeblock-run-btn");
+        var result = codeblock.querySelector(".codestep-result");
 
         var maxStep = parseInt(codeblock.dataset.maxStep);
 
@@ -42,6 +137,15 @@
             if (newI === -1)
                 prev.firstElementChild.style.display = "none";
         }
+
+        if (newI === maxStep && codeblock.dataset.runnable === "true") {
+            runButton.style.display = "block";
+            result.style.display = "block";
+        }
+        else {
+            runButton.style.display = "none";
+            result.style.display = "none";
+        }
     }
 
     function setupButtons(codeblocks) {
@@ -64,4 +168,5 @@
 
     var codesteps = document.querySelectorAll(".codestep");
     setupButtons(codesteps);
+    setupBlocks(codesteps);
 })();

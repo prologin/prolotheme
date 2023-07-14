@@ -42,7 +42,7 @@ def function():
     print("Un TP d'exemple qui sert aussi de cheat-sheet")
 ```
 
-{{< codestep steps=4 lang="py" >}}
+{{< codestep steps=4 lang="py" run="false" >}}
 
 {{< codestep-block desc="" >}}
 # Nous avons aussi des codeblock du type `step-by-step`
@@ -63,6 +63,24 @@ else:
 {{< codestep-block desc="" >}}
 
 print("End of code")
+{{< /codestep-block >}}
+
+{{< /codestep >}}
+
+{{< codestep steps=3 lang="py" run="true" >}}
+
+{{< codestep-block desc="" >}}
+# Comparé au précédent, ce codestep a un bouton `Run` qui apparait à la
+# dernière étape
+ 
+{{< /codestep-block >}}
+
+{{< codestep-block >}}
+answer = input("Choisis un nombre :")
+{{< /codestep-block >}}
+
+{{< codestep-block >}}
+print("Tu as répondu :", answer)
 {{< /codestep-block >}}
 
 {{< /codestep >}}
