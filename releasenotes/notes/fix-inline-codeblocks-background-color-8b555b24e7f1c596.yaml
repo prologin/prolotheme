@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Set background color of inline codeblocks to grey.

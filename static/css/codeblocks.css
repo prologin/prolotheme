@@ -20,7 +20,7 @@
 }
 
 code:not(pre>code) {
-    background-color: var(--bg-codeblock-color);
+    background-color: #cecece;
     border: 1px solid #BCBEC0;
     border-radius: 5px;
     font: .75em Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -56,6 +56,10 @@ code:not(pre>code) {
     min-width: 100px;
     padding: 10px;
     position: relative;
+}
+
+.prolo-codeblock code {
+    background-color: var(--bg-codeblock-color);
 }
 
 #yourcode {
