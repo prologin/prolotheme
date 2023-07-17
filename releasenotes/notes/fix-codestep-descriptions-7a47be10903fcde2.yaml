@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix first codestep block description showing up at innapropriate times.

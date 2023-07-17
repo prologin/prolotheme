@@ -69,8 +69,6 @@ function getText(codestep) {
         for (const cb of codeblocks) {
             var blocks = cb.querySelectorAll(".codestep-block");
             blocks[0].className = "codestep-block step-0";
-            var descs = cb.querySelectorAll(".codestep-desc");
-            descs[0].style.display = "block";
 
             lineNb = cb.querySelectorAll("span[style=\"display:flex;\"]").length;
             var numbers = [...blocks].map(function(e) {
@@ -107,7 +105,7 @@ function getText(codestep) {
             for (let i = 0; i < maxStep; i++) {
                 blocks[i].className = "codestep-block step-" + i;
             }
-            descs[maxStep - 1].style.display = "none";
+            descs[oldI].style.display = "none";
         }
         else if (oldI === maxStep || oldI === -1) {
             for (let i = 0; i < maxStep; i++) {
