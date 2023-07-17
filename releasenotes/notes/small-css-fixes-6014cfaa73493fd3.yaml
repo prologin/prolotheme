@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Justify only paragraphs in article content
+other:
+  - |
+    - Put menu related css in menu.css
+    - Display quote in blockquotes on separate line
+    - Switch out 404 page title for an image
+    - Darken summary background
