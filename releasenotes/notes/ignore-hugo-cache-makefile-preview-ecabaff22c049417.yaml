@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Make hugo ignore its cache for the theme preview

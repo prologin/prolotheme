@@ -68,7 +68,7 @@ clean_resources:
 
 
 preview: given_resources dependencies
-	hugo --config exampleSite/config.toml --contentDir exampleSite/content --themesDir ../ --theme hugo-base-theme server
+	hugo --config exampleSite/config.toml --contentDir exampleSite/content --themesDir ../ --theme hugo-base-theme --ignoreCache server
 
 
 clean: clean_resources clean_dependencies

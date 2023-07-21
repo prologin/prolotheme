@@ -13,3 +13,5 @@ static/css/codemirror/
 
 public/
 .hugo_build.lock
+
+*.zip
