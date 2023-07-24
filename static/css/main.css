@@ -149,6 +149,10 @@ figcaption {
     margin-top: -15px;
 }
 
+figcaption p {
+    text-align: center !important;
+}
+
 /* Text-style: details */
 
 details {
