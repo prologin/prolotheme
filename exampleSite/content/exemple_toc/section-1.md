@@ -1,17 +1,17 @@
-Cet exemple permet de montrer le fonctionnement de la table des matières.
-Utilisez donc les liens dans celle-ci pour vous déplacer de partie en partie.
+This example shows how the general table of content works. 
+Use links in the tbale of content to navigate throw the page.
 
-# Partie 1
+# Part 1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum mi ligula, eu dictum purus feugiat in. Nam tempor et mi a pellentesque. Nunc aliquam interdum purus euismod scelerisque. Nulla nisl arcu, pellentesque vitae pellentesque a, fringilla eu nisi. Quisque semper, ligula vitae porta semper, neque ligula vulputate dolor, eu porttitor quam nunc eu nisi. Pellentesque vel metus libero. Vestibulum laoreet leo ut est porttitor aliquet. Duis ut magna tincidunt, porttitor ex sed, tempus eros. In pellentesque nibh ut scelerisque viverra. Praesent a nisi et mauris pretium commodo. Sed interdum velit velit, at consectetur ante laoreet facilisis. Donec libero orci, vulputate vitae nibh ac, tincidunt laoreet est. Pellentesque malesuada finibus nisi vel tincidunt.
 
-## Sous-partie 1.1
+## Subpart 1.1
 
 Vestibulum ante nunc, posuere non elementum ut, pretium facilisis lectus. Cras vestibulum rutrum nunc, vitae vehicula lorem auctor congue. Mauris maximus interdum neque, non commodo enim imperdiet quis. Sed ex arcu, molestie a porta nec, aliquet vel nisi. Vivamus nibh ante, dapibus a faucibus vel, cursus sed tellus. Donec efficitur, risus vehicula hendrerit laoreet, dolor leo tempus ante, a rutrum felis neque at metus. Vestibulum bibendum porttitor nisi, nec vestibulum metus. Integer sed arcu non neque porttitor rhoncus id at lacus. Phasellus at lectus vitae nulla pretium euismod eget sed turpis. Vivamus nec neque malesuada, molestie est egestas, tempus nunc. Curabitur ex sapien, hendrerit et quam id, ornare pharetra sapien. Ut pretium ut ex nec porttitor. Praesent nunc metus, mollis ac maximus eget, interdum interdum erat.
 
 In interdum eleifend diam, eget consequat risus consequat quis. Aenean orci mauris, scelerisque sit amet porttitor vitae, fermentum non elit. Phasellus tempus fringilla iaculis. Etiam posuere rhoncus massa, sed tincidunt dui malesuada a. Donec in massa auctor, finibus ipsum at, efficitur tortor. Maecenas sit amet libero sed sapien tincidunt sollicitudin accumsan vitae justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus lacinia dui eu pulvinar. Aenean enim lectus, consequat quis bibendum sed, congue eget sapien. Vivamus lacinia arcu nec massa faucibus dignissim a ut nulla. Ut volutpat elit quis interdum sollicitudin. Proin vitae sagittis urna. Proin rhoncus aliquam tempus. Quisque pulvinar dapibus ipsum.
 
-## Sous-partie 1.2
+## Subpart 1.2
 
 Etiam ullamcorper fringilla pretium. Nullam hendrerit tortor at tempor vestibulum. Aliquam ullamcorper lacus sit amet augue posuere, id dapibus mauris dapibus. Cras sed bibendum lectus, in tempus diam. Suspendisse ultricies metus in semper lacinia. Nulla scelerisque lorem nisl. Quisque id nibh eget eros sodales sagittis non vel metus. Donec sodales mollis velit, sed sagittis enim commodo in. Donec eleifend, dolor non sollicitudin sagittis, felis quam semper ligula, ut malesuada nulla est egestas lacus. Nunc ullamcorper a ex pharetra malesuada. Vivamus sagittis purus sagittis velit ullamcorper molestie.
 

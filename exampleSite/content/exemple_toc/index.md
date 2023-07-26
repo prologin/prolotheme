@@ -1,12 +1,12 @@
 ---
-title: "Exemple Table des Matières Générale"
+title: "Example of general table of content"
 weight: 2
 authors: ["Prologin"]
-subtitle: Voici un TP présentant comment fonctionne une table des matières en mode général
+subtitle: This lab shows an example of the general table of content
 layout: multiple_sections
 toc: general
 code_stub_url: FIXME (or not)
 tags:
-    - Exemple
-    - Exemple 2
+    - Example
+    - Example 2
 ---

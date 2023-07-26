@@ -1,7 +1,7 @@
 baseURL = ""
 languageCode = "fr-fr"
-title = "Prologin Theme"
-theme = "hugo-base-theme"
+title = "Prolotheme"
+theme = "prolotheme"
 
 [markup]
     # Table of content level
@@ -27,5 +27,5 @@ theme = "hugo-base-theme"
     menuOffset = 10
 
 [params.tags]
-    exemple = "green"
-    "exemple 1" = "red"
+    example = "green"
+    "example 1" = "red"
