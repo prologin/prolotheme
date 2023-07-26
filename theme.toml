@@ -1,7 +1,7 @@
 name = "Prolotheme"
 license = "AGPL"
 licenselink = "https://gitlab.com/prologin/tech/packages/prolotheme/-/blob/main/LICENSE"
-description = "Hugo theme made by Prologin"
+description = "Hugo theme made by Prologin. You can find all the details you want on our wiki: https://gitlab.com/prologin/tech/packages/prolotheme/-/wikis."
 
 # The home page of the theme, where the source can be found.
 homepage = "https://gitlab.com/prologin/tech/packages/prolotheme"
