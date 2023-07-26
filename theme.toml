@@ -1,2 +1,19 @@
-name = "Base Hugo Prologin"
-min_version = "0.108.0"
+name = "Prolotheme"
+license = "AGPL"
+licenselink = "https://gitlab.com/prologin/tech/packages/prolotheme/-/blob/main/LICENSE"
+description = "Hugo theme made by Prologin"
+
+# The home page of the theme, where the source can be found.
+homepage = "https://gitlab.com/prologin/tech/packages/prolotheme"
+
+# If you have a running demo of the theme.
+demosite = "https://prolotheme.netlify.app/"
+
+tags = ["Responsive", "Docs", "Light"]
+features = ["code", "learning", "labs"]
+
+# If the theme has a single author
+[author]
+    name = "Prologin"
+    homepage = "https://prologin.org"
+
