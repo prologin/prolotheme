@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Add a flag to prevent confettis from popping repeatedly when scrolling down.

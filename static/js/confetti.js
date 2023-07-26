@@ -41,24 +41,30 @@
     }
 
     var scrollTop = 0;
+    var confettisPopped = false;
     window.addEventListener('scroll', function(event) {
         var goBackButton = document.querySelector('#go-back-button');
 
         var st = window.pageYOffset || document.documentElement.scrollTop;
         if (st < scrollTop) {
             scrollTop = st <= 0 ? 0 : st;
+            confettisPopped = false;
             return;
         }
 
         scrollTop = st <= 0 ? 0 : st;
 
         var display = window.getComputedStyle(goBackButton, null).display;
-        if (display === "none")
+        if (display === "none") {
+            confettisPopped = false;
             return;
+        }
 
         var position = goBackButton.getBoundingClientRect();
 
-        if (position.top >= 0 && position.bottom <= window.innerHeight)
+        if (position.top >= 0 && position.bottom <= window.innerHeight && !confettisPopped) {
             throwConfettis();
+            confettisPopped = true;
+        }
     });
 })();
