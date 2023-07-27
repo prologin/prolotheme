@@ -27,10 +27,11 @@ header.site-header {
 <div class="container">
     <ul class="article-list">
         {{ range (where .Pages "Params.hidden" "ne" "true").ByTitle.ByWeight }}
+        {{ $link := .RelPermalink }}
         {{ if and (.Params.Tags) (not .Site.Params.Style.hideTags) }}
-        <li onclick="location.href = {{ .RelPermalink }}" class="article-item article-tagged-item">
+        <li onclick="location.href = {{ $link }}" class="article-item article-tagged-item">
         {{ else }}
-        <li onclick="location.href = {{ .RelPermalink }}" class="article-item">
+        <li onclick="location.href = {{ $link }}" class="article-item">
         {{ end }}
             <h2>{{ .Title }}</h2>
             {{ if and (.Params.Tags) (not .Site.Params.Style.hideTags) }}
@@ -39,6 +40,9 @@ header.site-header {
                     <a class="tag-item {{ urlize . }}" href="/tags/{{ urlize . }}">{{ . }}</a>
                     {{ end }}
                 </div>
+            {{ end }}
+            {{ with .Params.preview }}
+            <img src="{{ $link }}/{{ . }}" alt="preview" class="preview-img" height=200 />
             {{ end }}
         </li>
         {{ end }}
