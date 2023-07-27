@@ -42,7 +42,7 @@ for (let tagI = 0; tagI < tagItems.length; tagI++) {
     var rgb = bgColor.replace(/[^\d,]/g, '').split(',');
     var luminescence = 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
 
-    var tagText = tagItems[tagI].firstElementChild;
+    var tagText = tagItems[tagI];
     if (luminescence > 150)
         tagText.style.color = 'var(--text-color)';
     else

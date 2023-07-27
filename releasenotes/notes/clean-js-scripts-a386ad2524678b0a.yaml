@@ -1,0 +1,7 @@
+---
+issues:
+  - |
+    The loading of the site was a bit slow due to include of unused js scripts.
+upgrade:
+  - |
+    The js scripts are now included only when necessary.
