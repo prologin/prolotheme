@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix interactive codeblocks display with a subject with multiple sections.
