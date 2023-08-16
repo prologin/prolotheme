@@ -20,7 +20,9 @@
                     liContent += '<div class="tag-list">';
                     for (const tag in item.tags) {
                         var tagname = item.tags[tag];
-                        var tagclass = tagname.toLowerCase().replace(/[^a-z0-9_]+/gi, '').replace(' ', '')
+                        // This line reproduce the behavior of the urlize hugo
+                        // function (see https://github.com/gohugoio/hugo/blob/master/resources/page/permalinks_test.go#L56)
+                        var tagclass = tagname.toLowerCase().replace(/ /g, '-');
                         liContent += '<a class="tag-item ' + tagclass + '" href="/tags/' +
                             tagclass +'">' + tagname + '</a>';
                     }
