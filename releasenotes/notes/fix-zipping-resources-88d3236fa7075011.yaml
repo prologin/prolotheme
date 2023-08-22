@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix the zip file structure (it had unwanted subdirectories due to the hugo site structure)
