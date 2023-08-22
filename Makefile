@@ -58,7 +58,9 @@ given_resources:
 		$(eval tp_name := $(shell basename "$(shell dirname "$(shell dirname "$i")")"))\
 		if [[ $(shell find $i -maxdepth 1 | wc -l) -gt 1 || $(nb_dirs) -gt 0 ]] ;\
 		then\
-			zip -r "$i/$(tp_name).zip" $i ;\
+			pushd $i ;\
+			zip -r "$(tp_name).zip" . ;\
+			popd ;\
 		fi ;\
 	)
 
