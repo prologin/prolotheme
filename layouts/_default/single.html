@@ -18,6 +18,12 @@
     </aside>
     <article class="container">
         {{ .Content }}
+        {{ with .Params.summary }}
+        <h1>Pour résumer</h1>
+        <div class="article-summary">
+            {{ . | markdownify }}
+        </div>
+        {{ end }}
         <a id="go-back-button" href='{{ ref .Page "."}}'>Retour au Menu</a>
         <div id="confettis-container">
             {{ range $i := (seq 100) }}

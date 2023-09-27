@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    A `summary` option has been added to allow you to summarize the post. You 
+    can use markdown to change the layout of the text. It will be written in 
+    the last section (or at the end if it is a single page post).
+issues:
+  - |
+    For now, the summary section is not shown in the table of content.

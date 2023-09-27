@@ -1,13 +1,10 @@
 ---
-title: "Example Lab"
+title: "Example single layout"
 weight: 1
 authors: ["Prologin"]
 subtitle: Here is an example lab that shows all the possibilities offered by the theme.
-layout: multiple_sections
-code_stub_url: ./resources/given_resources/example.zip
-preview: "resources/preview.gif"
 summary: |
-    This lab is used as an example page with multiple sections. 
+    This lab is used as an example page with one single section. 
     It can summarise concepts and everything covered in this subject.
     It support **markdown** and can also
 
@@ -22,5 +19,9 @@ summary: |
     lines
 tags: 
     - "Example"
-    - "Example 1"
+    - "Example single page"
 ---
+
+# Introduction
+
+Some random content

@@ -1,5 +1,11 @@
-{{ define "title" }} {{ .Site.Title }} | {{ .Title }} {{ end }} {{ define "main"
-}}
+{{ define "title" }}
+{{ .Site.Title }} | {{ .Title }} {{ end }}
+{{ define "main" }}
+
+{{- $files := .Resources.Match "section*.md" -}}
+{{- $ContentSections := sort $files "Name" "asc" -}}
+{{- $ContentLen := add (len $ContentSections) (cond (isset $.Params "summary") 1 0) -}}
+
 <div class="progress-bar"></div>
 <div class="article-title-box">
     <h1 class="article-title">{{ .Title }}</h1>
@@ -11,10 +17,6 @@
     {{ end }}
 </div>
 
-{{- $files := .Resources.Match "section*.md" -}}
-{{- $ContentSections := sort $files "Name" "asc" -}}
-{{- $ContentLen := len $ContentSections -}}
-
 <div id="article-container">
     {{ if (eq $.Params.toc "general") }}
         <aside id="toc" class="toc">
@@ -25,41 +27,35 @@
             </div>
             {{ end }}
         </aside>
-        {{ range $i, $num := (seq $ContentLen) }}
-            <article id="section-{{ $num }}" class="container">
-                <a id="top"></a>
-                    {{ (index $ContentSections $i).Content }}
-                    {{ if (eq $num $ContentLen) }}     
-                    <a id="go-back-button" href='{{ ref $.Page "." }}'>Retour au Menu</a>
-                    <div id="confettis-container">
-                        {{ range $i := (seq 100) }}
-                        <i class="confetti"></i>
-                        {{ end }}
-                    </div>
-                    {{ end }}
-            </article>
+    {{ end }}
+    {{ range $i, $num := (seq $ContentLen) }}
+        {{ if (index $ContentSections $i).Params.show_toc }}
+        <aside id="toc-{{ $num }}" class="toc">
+            <div class="toc-title">Table des matières</div>
+            {{ (index $ContentSections $i).TableOfContents }}
+        </aside>
         {{ end }}
-    {{ else }}
-        {{ range $i, $num := (seq $ContentLen) }}
-            {{ if (index $ContentSections $i).Params.show_toc }}
-            <aside id="toc-{{ $num }}" class="toc">
-                <div class="toc-title">Table des matières</div>
-                {{ (index $ContentSections $i).TableOfContents }}
-            </aside>
-            {{ end }}
-            <article id="section-{{ $num }}" class="container">
-                <a id="top"></a>
-                    {{ (index $ContentSections $i).Content }}
-                    {{ if (eq $num $ContentLen) }}     
-                    <a id="go-back-button" href='{{ ref $.Page "."}}'>Retour au Menu</a>
-                    <div id="confettis-container">
-                        {{ range $i := (seq 100) }}
-                        <i class="confetti"></i>
-                        {{ end }}
+        <article id="section-{{ $num }}" class="container">
+            <a id="top"></a>
+                {{ if (eq $num $ContentLen) }}
+                    {{ with $.Params.summary }}
+                    <h1>Pour résumer</h1>
+                    <div class="article-summary">
+                    {{ . | markdownify }}
                     </div>
+                    {{ else }}
+                    {{ (index $ContentSections $i).Content }}
                     {{ end }}
-            </article>
-        {{ end }}
+                <a id="go-back-button" href='{{ ref $.Page "."}}'>Retour au Menu</a>
+                <div id="confettis-container">
+                    {{ range $i := (seq 100) }}
+                    <i class="confetti"></i>
+                    {{ end }}
+                </div>
+                {{ else }}
+                {{ (index $ContentSections $i).Content }}
+                {{ end }}
+        </article>
     {{ end }}
 </div>
 
