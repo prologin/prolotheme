@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Add new `overview` shortcode. This shortcode allows to display the subtitle
+    of the pointed post in a popup above the link. 
+    The syntax is as follow:
+    ```
+    {{% overview "absolute/or/relative/link" }}Some text{{% /overview %}}
+    ```

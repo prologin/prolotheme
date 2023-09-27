@@ -13,7 +13,7 @@ reminder:
 - and `inline codeblock`
 
 1. And an ordered list
-2. With a [link to Prologin](https://prologin.org)
+2. With a [link to Prologin](https://prologin.org "Prologin site")
 3. and a [link to the wiki](https://gitlab.com/prologin/tech/packages/prolotheme/-/wikis/home)
 
 > Here is a quote.
@@ -24,6 +24,10 @@ The next sentence includes a spoiler. Click on the black text to reveal
 something!
 What is yellow and wait? {{< spoiler >}}A lemon
 in an elevator{{</ spoiler >}}.
+
+## Overview of a page
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum mi ligula, eu dictum purus feugiat in. Nam tempor et mi a pellentesque. Nunc aliquam interdum purus euismod scelerisque. {{% overview "/example_single/" %}}**This** text can be hovered{{% /overview %}}. Nulla nisl arcu, pellentesque vitae pellentesque a, fringilla eu nisi. Quisque semper, ligula vitae porta semper, neque ligula vulputate dolor, eu porttitor quam nunc eu nisi. Pellentesque vel metus libero. Vestibulum laoreet leo ut est porttitor aliquet. Duis ut magna tincidunt, porttitor ex sed, tempus eros. In pellentesque nibh ut scelerisque viverra. 
 
 # Codeblocks
 

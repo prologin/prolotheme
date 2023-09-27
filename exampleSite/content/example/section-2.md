@@ -69,4 +69,3 @@ An _exercise_ box with title.
 An _exercise_ box without title.
 
 {{% /box %}}
-

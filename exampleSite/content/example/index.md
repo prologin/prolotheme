@@ -9,17 +9,6 @@ preview: "resources/preview.gif"
 summary: |
     This lab is used as an example page with multiple sections. 
     It can summarise concepts and everything covered in this subject.
-    It support **markdown** and can also
-
-    be
-
-    written
-
-    on
-
-    multiple
-
-    lines
 tags: 
     - "Example"
     - "Example 1"
