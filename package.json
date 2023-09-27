@@ -1,7 +1,7 @@
 {
   "name": "contenus",
   "dependencies": {
-    "codemirror": "5.65.13",
+    "codemirror": "5.65.15",
     "jquery": "^3.6.1",
     "mathjax": "^3.2.2",
     "skulpt": "^1.2.0",
