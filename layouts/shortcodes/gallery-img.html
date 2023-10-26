@@ -1,0 +1,6 @@
+{{- $id := (.Parent.Scratch.Get "id") -}}
+
+<img src="{{ .Get "src" }}" class="gallery-block step-{{ (int $id) }}" data-desc="{{ .Get "desc" }}">
+
+{{- .Parent.Scratch.Add "id" 1 -}}
+{{- .Parent.Scratch.Add "descs" (slice (.Get "desc")) -}}

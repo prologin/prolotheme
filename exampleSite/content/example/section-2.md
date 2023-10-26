@@ -69,3 +69,26 @@ An _exercise_ box with title.
 An _exercise_ box without title.
 
 {{% /box %}}
+
+# Gallery
+
+You can show images one at a time using the gallery shortcode.
+It also allows you to give a little description of each image.
+
+{{< gallery steps=3 >}}
+
+{{< gallery-img src="./resources/images/step1.png" desc="Image 1" >}}
+{{< gallery-img src="./resources/images/step2.png" desc="" >}}
+{{< gallery-img src="./resources/images/step3.png" desc="*Last* image" >}}
+
+{{< /gallery >}}
+
+You can also activate animations between each frames.
+
+{{< gallery steps=3 animation=true >}}
+
+{{< gallery-img src="./resources/images/step1.png" desc="Image 1" >}}
+{{< gallery-img src="./resources/images/step2.png" desc="" >}}
+{{< gallery-img src="./resources/images/step3.png" desc="*Last* image" >}}
+
+{{< /gallery >}}

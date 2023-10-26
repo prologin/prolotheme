@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add a gallery shortcode for displaying multiple images step by step.
+
+    Animations between each steps can be toggled with a parameter.

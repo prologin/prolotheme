@@ -1,0 +1,43 @@
+.gallery {
+    background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.gallery-content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.gallery-imgs {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    border: 2pt solid var(--primary-color);
+    height: fit-content;
+    overflow: hidden;
+}
+
+.gallery-img-container {
+    display: inline-flex;
+    margin-bottom: -10px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.gallery-arrow {
+    color: var(--primary-color);
+    cursor: pointer;
+    margin: 10px;
+    width: 40px;
+    min-width: 40px;
+}
+
+.gallery-desc {
+    display: none;
+    padding: 10px 2.5em;
+    margin-top: -1em;
+    text-align: center;
+    height: 10%;
+}
