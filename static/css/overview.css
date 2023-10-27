@@ -1,10 +1,27 @@
 .overview-item {
     position: relative;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.overview-item:hover {
+    position: relative;
+    text-decoration: none;
+    color: var(--secondary-color);
 }
 
 .overview-text {
     font-style: italic;
-    text-decoration: underline dotted;
+    text-decoration: underline dashed;
+}
+
+.overview-item:after {
+    content: "?";
+    font-style: italic;
+    font-size: 0.8em;
+    position: relative;
+    top: -0.4em;
+    margin: 0 -10px 0 -6px;
 }
 
 .overview-item:hover .overview-result {

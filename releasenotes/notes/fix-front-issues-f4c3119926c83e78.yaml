@@ -1,0 +1,12 @@
+---
+upgrade:
+  - |
+    - Reduce margin-top for lists after p blocks
+    - Update links regular color and hover color
+    - Make overview links more recognizable
+    - Darken blockquotes background
+fixes:
+  - |
+    - Fix first line left margin in blockquotes
+    - Update z-index for images and progress bar to prevent codesteps from
+      showing up in front of them
