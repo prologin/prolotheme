@@ -1,0 +1,8 @@
+---
+issues:
+  - |
+    Code Quality step take a lot of time to run in the CI, and it is not really
+    useful since it rarely used.
+other:
+  - |
+    Code Quality step is remove from the CI.

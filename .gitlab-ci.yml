@@ -1,16 +1,9 @@
 ---
 
-include:
-  - template: Code-Quality.gitlab-ci.yml
-
 stages:
   - qa
   - build
   - release
-
-code_quality:
-  stage: qa
-  interruptible: true
 
 build:
   stage: build
