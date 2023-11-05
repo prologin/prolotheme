@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Add margin to menu subtitle, and augment font size.
