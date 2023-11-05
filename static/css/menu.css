@@ -164,6 +164,8 @@
 .page-header-subtitle {
     color: #ccc;
     text-align: center;
+    margin: 0 100pt;
+    font-size: 1.2em;
 }
 
 /**** responsive ****/
