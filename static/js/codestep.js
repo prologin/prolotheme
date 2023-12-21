@@ -7,7 +7,31 @@ function builtinRead(x)
     return Sk.builtinFiles["files"][x];
 }
 
-function runCodestep(code, outTxtNode, canvasNode) {
+function findAncestor (el, sel) {
+    while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el,sel)));
+    return el;
+}
+
+function getText(codestep) {
+    var blocks = codestep.querySelectorAll(".codestep-block");
+    var code = ""
+    for (const b of blocks) {
+        var text = b.querySelector(".language-py").innerText;
+        code += text + "\n";
+    }
+
+    return code;
+}
+
+function runCodestep(runButton) {
+    var cb = findAncestor(runButton, ".codestep");
+    console.log(cb);
+
+    var outTxtNode = cb.querySelector(".prolo-codepython-output");
+    var canvasNode = cb.querySelector(".prolo-codepython-canvas");
+
+    var code = getText(cb);
+
     outTxtNode.innerHTML = "";
     Sk.pre = "output";
 
@@ -33,17 +57,6 @@ function runCodestep(code, outTxtNode, canvasNode) {
             outTxtNode.innerText = err.toString();
         }
     );
-}
-
-function getText(codestep) {
-    var blocks = codestep.querySelectorAll(".codestep-block");
-    var code = ""
-    for (const b of blocks) {
-        var text = b.querySelector(".language-py").innerText;
-        code += text + "\n";
-    }
-
-    return code;
 }
 
 // Step by step behaviour
@@ -83,7 +96,7 @@ function getText(codestep) {
             var text = getText(cb);
             runButton.addEventListener(
                 "click",
-                function() {runCodestep(text, outTxt, outCanvas);}
+                function(event) {runCodestep(event.target);}
             );
 
             var result = cb.querySelector(".codestep-result");

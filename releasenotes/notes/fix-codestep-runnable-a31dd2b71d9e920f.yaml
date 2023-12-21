@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Use correct source code when using a run button, not the code of the last
+    codestep of the page.
