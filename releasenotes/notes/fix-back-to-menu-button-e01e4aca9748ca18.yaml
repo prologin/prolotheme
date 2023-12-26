@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Make the _'Retour au menu'_ button relative to make it work well on previews
