@@ -1,0 +1,102 @@
+.score {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items:stretch;
+    column-gap: 10px;
+    justify-content: end;
+    padding-right: 15%;
+}
+    
+.score p {
+    font-size: 120%;
+    padding: 0;
+    text-align: right;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+
+    margin: 0;
+}
+
+.score .score-icon {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    position: relative;
+    margin: 0 0px;
+
+    cursor: pointer;
+    z-index: 2;
+}
+
+.score .score-icon span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+
+    z-index: 2;
+}
+
+.score .score-icon span img {
+    height: 30px;
+    width: 30px;
+    filter: drop-shadow(0 0 7px rgba(255, 255, 255, 1));
+
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.score .score-icon .score-tooltip {
+    position: absolute;
+    top: 0;
+
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25);
+    color: #000;
+    font-size: 15px;
+    padding: 5px 10px;
+    opacity: 0;
+
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.score .score-icon:hover .score-tooltip {
+    top: -40px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.score .score-icon:hover .score-tooltip:nth-child(1) {
+    top: -75px;
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.35s;
+}
+
+.score .score-icon .score-tooltip:last-of-type::before {
+    position: absolute;
+
+    content: "";
+    background: #fff;
+    border-radius: 100% 0 0 0;
+    bottom: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.score .score-icon:hover span img {
+    backface-visibility: hidden;
+    filter: drop-shadow(0 0 1px rgb(255, 255, 255))
+            drop-shadow(0 0 2px #fff)
+            drop-shadow(0 0 4px #fff)
+            drop-shadow(0 0 8px #fff);
+    transform: translateZ(0);
+}

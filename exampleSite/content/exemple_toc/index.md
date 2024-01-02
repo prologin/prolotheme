@@ -1,13 +1,16 @@
 ---
-title: "Example of general table of content"
-weight: 2
+title: "Example table of content"
 authors: ["Prologin"]
-subtitle: This lab shows an example of the general table of content
+weight: 2
+description: This lab shows an example of the general table of content
+
 layout: multiple_sections
 toc: general
 code_stub_url: FIXME (or not)
+
 preview: ./resources/preview.png
+score: 20
 tags:
-    - Example
-    - Example 2
+    - python
+    - web
 ---

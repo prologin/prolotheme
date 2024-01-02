@@ -24,8 +24,3 @@ theme = "prolotheme"
     tertiaryColor = "#EF5B5B"
     headerFont = "Courier"
     colorScheme = ["#dd3737", "#f59c2e", "#314658"]
-    menuOffset = 10
-
-[params.tags]
-    example = "green"
-    "example 1" = "red"

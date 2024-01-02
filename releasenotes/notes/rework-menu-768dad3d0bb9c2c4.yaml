@@ -1,0 +1,49 @@
+---
+features:
+  - |
+    Subjects can now have showcase using the front matter named 
+    `showcase`, like this:#
+    ```
+    showcase: ./path/to/showcase
+
+    ```
+
+    Showcases are displayed on the list page. 
+    The default showcase is the `static/default.gif` file.
+
+    Subjects can now have score using the front matter named 
+    `score`, like this:#
+    ```
+    score: 42
+
+    ```
+
+    The score is displayed on the list page with the `static/icon/prolopoint.png` file
+    and have a hovering effect.
+
+    When there is tags and score, tags are aligned to the left and
+    score to the right.
+    When there is tags and no score, tags are centered.
+    When there is no tags and score, warning tag appears (meaning
+    you must have at least one tag).
+    When there is no tags and no score, nothing appears.
+issues:
+  - |
+    Preview images can come out of the window.
+upgrade:
+  - |
+    Change display style from blocks to cards.
+
+    Change tags presentation from text to images.
+    Tags now have a hovering effect to display their name.
+    The usage still the same.
+
+    Change `subtitle` by `description`.
+    Subject description now appears in the list page.
+
+    Confetti now appear on the list page, when finishing a subject.
+    Confetti have a different look.
+deprecations:
+  - |
+    Tags color can no longer be defined in the configuration file.
+    MenuOffset can no longer be defined in the configuration file.

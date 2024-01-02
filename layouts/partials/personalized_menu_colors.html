@@ -27,12 +27,6 @@ for (; i < tpItems.length; i++) {
     prev = colors.splice(randomColor, 1);
     tpItems[i].style.setProperty('--item-color', prev)
     {{ end }}
-
-    {{ with .Site.Params.Style.menuOffset }}
-    var off = {{ . }};
-    const offset = ((off * rnd() | 0) - (off / 2)) * (off / 2);
-    tpItems[i].style.setProperty('--item-pos', offset.toString() + "px")
-    {{ end }}
 }
 
 // Tags text color

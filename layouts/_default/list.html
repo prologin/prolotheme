@@ -5,7 +5,7 @@
 <header class="home-title-box">
     <h1 class="page-header-title"> {{ .Title }}</h1>
     <p class="page-header-subtitle">
-    {{ .Params.subtitle }}
+    {{ .Params.Description | markdownify }}
     </p>
 </header>
 
@@ -23,29 +23,74 @@ header.site-header {
 }
 </style>
 {{ end }}
+<script type="text/javascript" src="/js/confetti.js"></script>
 
-<div class="container">
+<div class="container-article">
     <ul class="article-list">
         {{ range (where .Pages "Params.hidden" "ne" "true").ByTitle.ByWeight }}
         {{ $link := .RelPermalink }}
-        {{ if and (.Params.Tags) (not .Site.Params.Style.hideTags) }}
-        <li onclick="location.href = {{ $link }}" class="article-item article-tagged-item">
-        {{ else }}
+
         <li onclick="location.href = {{ $link }}" class="article-item">
+
+        {{ with .Params.showcase }}
+        <img src="{{ $link }}/{{ . }}" alt="Where the showcase ?" class="img-showcase" />
+        {{ else }}
+        <img src="/default.webp" alt="Default showcase" class="img-showcase" />
         {{ end }}
+
+        {{ with .Params.preview }}
+        <img src="{{ $link }}/{{ . }}" alt="Preview of the subject" class="img-prev" />
+        {{ end }}
+
+        <div class="article-item-title">
             <h2>{{ .Title }}</h2>
-            {{ if and (.Params.Tags) (not .Site.Params.Style.hideTags) }}
+        </div>
+
+        {{ if (not .Site.Params.Style.hideTags) }}
+            {{ if ( .Params.Score ) }}
+                <div class="grid-tags-score">
+            {{ end }}
+
+            {{ if ( .Params.Tags ) }}
                 <div class="tag-list">
-                    {{ range .Params.tags }}
-                    <a class="tag-item {{ urlize . }}" href="/tags/{{ urlize . }}">{{ . }}</a>
-                    {{ end }}
+                {{ range .Params.tags }}
+                    <a class="tag-item {{ urlize . }}" href="/tags/{{ urlize . }}">
+                        <div class="tag-item-tooltip">{{ strings.Title . }}</div>
+                        <span><img src="/icon/{{ urlize . }}.png" onerror="this.style.display='none'" alt="{{ . }}"/></span>
+                    </a>
+                {{ end }}
                 </div>
+                        
+            {{ else }}
+                {{ if and ( not hugo.IsProduction ) ( .Params.Score ) }}
+                    <div class="tag-list">
+                        <a class="tag-item">
+                            <img src="/icon/missing.png">
+                        </a>
+                    </div>
+                {{ end }}
             {{ end }}
-            {{ with .Params.preview }}
-            <img src="{{ $link }}/{{ . }}" alt="preview" class="preview-img" height=200 />
+
+            {{ if ( .Params.Score ) }}
+                <div class="score">
+                    <p>{{ .Params.Score }}</p>
+                    <div class="score-icon">
+                        <div class="score-tooltip">C'est&nbspla&nbspdifficulté&nbsp!</div>
+                        <div class="score-tooltip">Prolopoints</div>
+                        <span><img src="/icon/prolopoint.png"/></span>
+                    </div>
+                </div>
+            </div>
             {{ end }}
-        </li>
+
         {{ end }}
+
+        <div class="article-item-description">
+            <p> {{ .Description | markdownify }} </p>
+        </div>
+
+        </li>
+    {{ end }}
     </ul>
 </div>
 

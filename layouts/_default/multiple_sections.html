@@ -9,7 +9,8 @@
 <div class="progress-bar"></div>
 <div class="article-title-box">
     <h1 class="article-title">{{ .Title }}</h1>
-    <p class="article-subtitle">{{ .Params.subtitle }}</p>
+    <p class="article-subtitle">{{ .Params.Description | markdownify }}</p>
+
     {{ if isset .Params "code_stub_url" }}
     <a href="{{ .Params.code_stub_url }}" class="code-stub-button" download
         >Code à compléter</a
@@ -46,12 +47,8 @@
                     {{ else }}
                     {{ (index $ContentSections $i).Content }}
                     {{ end }}
-                <a id="go-back-button" href='{{ relref $.Page "." }}'>Retour au Menu</a>
-                <div id="confettis-container">
-                    {{ range $i := (seq 100) }}
-                    <i class="confetti"></i>
-                    {{ end }}
-                </div>
+                <a id="go-back-button" onclick="setupConfettis()" href='{{ relref $.Page "." }}'>Retour au Menu</a>
+
                 {{ else }}
                 {{ (index $ContentSections $i).Content }}
                 {{ end }}
