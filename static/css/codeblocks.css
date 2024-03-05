@@ -106,6 +106,12 @@ pre.prolo-codepython-output {
     white-space: pre-wrap;
 }
 
+/*** scratch blocks ***/
+
+.blocks {
+    text-align: center;
+}
+
 /*** responsive ***/
 
 @media screen and (max-width: 1000px) {

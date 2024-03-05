@@ -2,15 +2,15 @@
   "name": "contenus",
   "dependencies": {
     "codemirror": "5.65.16",
+    "grunt": "^1.6.1",
     "jquery": "^3.6.1",
+    "lunr": "^2.3.9",
     "mathjax": "^3.2.2",
     "skulpt": "^1.2.0",
-    "lunr": "^2.3.9",
-    "grunt": "^1.6.1",
-    "yamljs": "^0.3.0",
-    "string": "^3.3.3"
+    "string": "^3.3.3",
+    "yamljs": "^0.3.0"
   },
   "scripts": {
-      "searchjson": "grunt lunr-index"
+    "searchjson": "grunt lunr-index"
   }
 }

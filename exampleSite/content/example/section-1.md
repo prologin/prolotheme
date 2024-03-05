@@ -54,6 +54,13 @@ def function():
     print("An example codeblock without copy button")
 ```
 
+
+```scratch
+when flag clicked
+say [This is an example of scratch blocks]
+say [Go to the dedicated example if you want to know more]
+```
+
 ## Codestep
 {{< codestep steps=4 lang="py" run="false" >}}
 
