@@ -65,6 +65,10 @@ module.exports = function(grunt) {
                 title: "",
                 tags: [],
                 href: href,
+                preview:'',
+                showcase:'',
+                description:'',
+                score:0,
                 content: S(content[0]).trim().stripTags().stripPunctuation().s
             };
 
@@ -73,6 +77,10 @@ module.exports = function(grunt) {
                     title: frontMatter.title,
                     tags: frontMatter.tags,
                     href: href,
+                    preview: frontMatter.preview,
+                    showcase: frontMatter.showcase,
+                    description: frontMatter.description,
+                    score: frontMatter.score,
                     content: S(content[2]).trim().stripTags().stripPunctuation().s
                 };
             }

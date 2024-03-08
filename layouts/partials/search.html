@@ -11,12 +11,29 @@
             // Iterate and build result list elements
             for (const n in results) {
                 const item = results[n][0];
-                var liContent = '<h2><a href="' + item.href + '">' + item.title + '</a></h2>';
-                var liTag = '<li class="article-item">';
+                
+                if (item.showcase !== undefined){
+                    var showcase = "<img src='" + item.href + item.showcase + "' alt='Default showcase' class='img-showcase'>";
+                }
+                else{
+                    var showcase = "<img src='/default.webp' alt='Default showcase' class='img-showcase'>";
+                    }
+                var preview = '';
+
+                if (item.preview !== undefined){
+                    preview = "<img src='" + item.href + item.preview + "' alt='Preview of the subject' class='img-prev'>";
+                }
+
+                var liContent = '<div class="article-item-title"><h2>' + item.title + '</h2></div>';
+                var liTag = '<li class="article-item" onclick=location.href="'+ item.href + '">';
 
 {{ if not .Site.Params.Style.hideTags }}
                 if (item.tags !== undefined) {
-                    liTag = '<li class="article-item article-tagged-item">';
+
+                    if (item.score !== undefined){
+                        liContent += '<div class="grid-tags-score">';
+                    }
+
                     liContent += '<div class="tag-list">';
                     for (const tag in item.tags) {
                         var tagname = item.tags[tag];
@@ -24,13 +41,37 @@
                         // function (see https://github.com/gohugoio/hugo/blob/master/resources/page/permalinks_test.go#L56)
                         var tagclass = tagname.toLowerCase().replace(/ /g, '-');
                         liContent += '<a class="tag-item ' + tagclass + '" href="/tags/' +
-                            tagclass +'">' + tagname + '</a>';
+                            tagclass +'">' +
+                            '<div class="tag-item-tooltip">' + tagname + '</div>' + 
+                            '<span><img src="/icon/' + tagname + '.png" onerror="this.style.display=none" alt=' + tagname + '></span>' +
+                            '</a>';
                     }
-                    liContent += '</div>'
+
+                    liContent += '</div>';
+
+                    if (item.score !== undefined){
+
+                        liContent += '<div class="score">';
+                        
+                        liContent += '<p>' + item.score + '</p>';
+
+                        liContent += '<div class="score-icon"><div class="score-tooltip">C' + "'" + 'est&nbsp;la&nbsp;difficulté&nbsp;!</div><div class="score-tooltip">Prolopoints</div>' + 
+                        '<span><img src="/icon/prolopoint.png"></span></div>';
+
+                        liContent += '</div>';
+                    }
+
+
+                    if (item.score !== undefined){
+                        liContent += '</div>';
+                    }
                 }
 {{ end }}
 
-                resultList += liTag + liContent + '</li>'
+                var liDescription = '<div class="article-item-description"><p>' + item.description + '</p></div>';
+
+
+                resultList += liTag + showcase + preview + liContent + liDescription + '</li>'
             }
             searchResults.innerHTML = resultList
         } else {
@@ -62,6 +103,14 @@
                 this.field("content");
 
                 this.ref("href");
+
+                this.field("showcase");
+
+                this.field("preview");
+
+                this.field("description");
+
+                this.field("score");
 
                 for (const page in pagesData) {
                     if (data[page] !== null)
