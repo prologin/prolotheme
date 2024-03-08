@@ -42,6 +42,8 @@ function createCodeMirrorEditor(txtAreaNode, lang) {
             read: builtinRead,
             inputfunTakesPrompt: true,
             execLimit: 10000,
+            killableWhile: true,
+            killableFor: true,
         });
 
         (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = canvasNode;
