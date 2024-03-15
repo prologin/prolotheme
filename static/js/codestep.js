@@ -96,7 +96,6 @@ function runCodestep(runButton) {
             var outTxt = cb.querySelector(".prolo-codepython-output");
             var outCanvas = cb.querySelector(".prolo-codepython-canvas");
 
-            var text = getText(cb);
             runButton.addEventListener(
                 "click",
                 function(event) {runCodestep(event.target);}

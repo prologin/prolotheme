@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix codestep numbers padding when not in python.
