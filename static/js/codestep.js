@@ -16,11 +16,18 @@ function getText(codestep) {
     var blocks = codestep.querySelectorAll(".codestep-block");
     var code = ""
     for (const b of blocks) {
-        var text = b.querySelector(".language-py").innerText;
+        var text = b.querySelector("[class^='language-']").innerText;
         code += text + "\n";
     }
 
     return code;
+}
+
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function() {
+        el.textContent = "Copier";
+    }, 1000);
 }
 
 function runCodestep(runButton) {
@@ -165,6 +172,7 @@ function runCodestep(runButton) {
         for (const cb of codeblocks) {
             var prev = cb.querySelector(".codestep-prev-button");
             var next = cb.querySelector(".codestep-next-button");
+            var copy = cb.querySelector(".codestep-copy");
 
             prev.addEventListener('click', () => {
                 var step = parseInt(cb.dataset.step);
@@ -173,6 +181,17 @@ function runCodestep(runButton) {
             next.addEventListener('click', () => {
                 var step = parseInt(cb.dataset.step);
                 displayBlock(cb, step + 1);
+            });
+            copy.addEventListener('click', (event) => {
+                navigator.clipboard.writeText(getText(cb)).then(
+                    function(){
+                        flashCopyMessage(event.target, 'Copié !')
+                    })
+                    .catch(
+                        function(e) {
+                            console && console.log(e);
+                            flashCopyMessage(event.target, 'Raté :\'(')
+                        });
             });
 
             prev.firstElementChild.style.display = "none";

@@ -21,7 +21,7 @@
                     flashCopyMessage(copyBtn, 'Copié !')
                 })
                 .catch(
-                    function() {
+                    function(e) {
                         console && console.log(e);
                         flashCopyMessage(copyBtn, 'Raté :\'(')
                     });
