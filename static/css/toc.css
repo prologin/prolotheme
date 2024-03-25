@@ -10,7 +10,7 @@
     border-radius: 0 0 4px 4px;
 
     margin-right: 4em;
-    padding-left: 15px;
+    padding: 0 15px;
     padding-bottom: -1em;
 }
 
@@ -46,17 +46,17 @@
     padding-left: 1.5em;
 }
 
-.toc li {
+.toc li, .toc summary {
     margin-bottom: 0.5em;
     margin-left: 0;
     counter-increment: toc-sections;
 }
 
-.toc li li {
+.toc li li, .toc details li {
     counter-increment: none;
 }
 
-.toc ul li::before {
+.toc ul li::before, .toc summary::before {
     content: "Partie " counter(toc-sections, upper-roman) ".\A";
     color: var(--secondary-color);
     cursor: pointer;
@@ -64,7 +64,7 @@
     white-space: pre-line;
 }
 
-.toc li li::before {
+.toc li li::before, .toc details li::before {
     content: "";
 }
 
@@ -74,11 +74,22 @@
     text-decoration: none;
 }
 
+.toc summary a:any-link {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 1em;
+}
+
 .toc a:hover {
     color: grey;
 }
 
-.toc ul ul a:any-link {
+.toc a.section-link:hover {
+    color:gray
+}
+
+.toc ul ul a:any-link, .toc details ul a:any-link {
     font-weight: normal;
     text-decoration: none;
 }
@@ -87,8 +98,13 @@
     padding: 0.5em;
 }
 
-.toc .section-link ul ul {
+.toc ul.section-link {
     padding-left: 1.5em;
+}
+
+.toc details, .toc summary {
+    border: none;
+    background-color: inherit;
 }
 
 /**** responsive ****/

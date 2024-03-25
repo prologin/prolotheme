@@ -23,8 +23,16 @@
         <aside id="toc" class="toc">
             <div class="toc-title">Table des matières</div>
             {{ range $i, $num := (seq $ContentLen) }}
-            <div class="section-link" data-section={{ $i }}>
-            {{ (index $ContentSections $i).TableOfContents }}
+            <div>
+                {{- $replaceLink := printf "<summary class='toc-summary'><a $1 class='section-link' data-section=%d>$2</a></summary>" $i -}}
+                {{- $toc := (index $ContentSections $i).TableOfContents -}}
+                {{- $toc := replaceRE "<nav (.*)>[\n+ ]*<ul>[\n+ ]*<li>" "<nav $1>" $toc -}}
+                {{- $toc := replaceRE "</li>[\n+ ]*</ul>[\n+ ]</nav>" "</nav>" $toc -}}
+                {{- $toc := replaceRE "<a (.*)>(.*)</a>" $replaceLink $toc 1 -}}
+                {{- $toc := replaceRE "<nav([^>]*)>" "<nav $1><details class='toc-details'>" $toc -}}
+                {{- $toc := replaceRE "</nav>" "</details></nav>" $toc -}}
+                {{- $toc := replaceRE "<ul"  (printf "<ul class='section-link' data-section=%d" $i) $toc -}}
+                {{ safeHTML $toc }}
             </div>
             {{ end }}
         </aside>
