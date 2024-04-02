@@ -68,6 +68,13 @@ function createCodeMirrorEditor(txtAreaNode, lang) {
         const outCanvas = codeBlock.querySelector(".prolo-codepython-canvas");
         const runBtn = codeBlock.querySelector(".prolo-codeblock-run-btn");
 
+        // CodeMirror fails to init properly if not shown on screen.
+        // This poses a problem if it is in a details node.
+        // To solve it, we open before initialization, and close it after
+        const parentElt = codeBlock.parentNode;
+        if ($(parentElt).is('details'))
+            parentElt.open = true;
+
         // Replace the text-area with a CodeMirror block,
         // which includes line numbers and syntax highlighting.
         const codeMirror = createCodeMirrorEditor(textArea, "python");
@@ -77,6 +84,8 @@ function createCodeMirrorEditor(txtAreaNode, lang) {
             function() {runCodePython(codeMirror, outTxt, outCanvas);}
         );
 
+        if ($(parentElt).is('details'))
+            parentElt.open = false;
     }
 
     // Get all the Python code blocks and initialize them,

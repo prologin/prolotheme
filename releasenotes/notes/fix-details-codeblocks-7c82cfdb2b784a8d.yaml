@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix display bug when codeblocks were put in a details node.
