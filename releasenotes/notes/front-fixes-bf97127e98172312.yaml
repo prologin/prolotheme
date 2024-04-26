@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    - Fix sentence in codehtml ('HTML' instead of 'python')
+    - Fix margin between lists and paragraphs in boxes
+    - Image box jumping around when switching from and to an image without
+      description
+    - Markdownify content of spoiler blocs

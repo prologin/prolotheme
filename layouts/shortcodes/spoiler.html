@@ -2,4 +2,4 @@
 Do not modify indentation, that can mess with Hugo templating engine.
 BROKEN ? Yes it is, Sir
 */}}
-{{ if .Inner }}<span class="prolo-spoiler prolo-spoiler-hidden"><span class="prolo-spoiler-content prolo-spoiler-content-hidden">{{ .Inner }}</span></span>{{ end }}
+{{ if .Inner }}<span class="prolo-spoiler prolo-spoiler-hidden"><span class="prolo-spoiler-content prolo-spoiler-content-hidden">{{ .Inner | markdownify }}</span></span>{{ end }}

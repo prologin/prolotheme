@@ -26,6 +26,10 @@
     margin: 4px 0;
 }
 
+.highlight_box p + ul, .highlight_box p + ol {
+    margin-top: 0.6em;
+}
+
 /****** EXERCISE ******/
 
 .exercise .title::before {
