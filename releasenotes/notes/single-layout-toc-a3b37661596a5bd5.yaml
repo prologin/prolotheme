@@ -1,0 +1,5 @@
+---
+features:
+  - >
+    Add new front matter to allow users to generate the table of content or not
+    in single layout mode.

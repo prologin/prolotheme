@@ -6,6 +6,7 @@ description: Here is an example lab that shows all the possibilities offered by 
 summary: |
     This lab is used as an example page with multiple sections. 
     It can **summarise** `concepts` [links](https://google.com) and everything covered in this subject.
+toc: true
 tags: 
     - "cryptographie"
     - "python"

@@ -12,10 +12,12 @@
 </div>
 
 <div id="article-container">
+    {{ if (eq $.Params.toc "true") }}
     <aside class="toc">
         <div class="toc-title">Table des matières</div>
         {{ .TableOfContents }}
     </aside>
+    {{ end }}
     <article class="container">
         {{ .Content }}
         {{ with .Params.summary }}
