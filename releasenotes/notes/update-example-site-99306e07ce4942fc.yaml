@@ -1,0 +1,5 @@
+---
+other:
+  - |
+    Add syntax preview on example website.
+    Upgrade netlify version on MR deploy preview
