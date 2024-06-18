@@ -24,6 +24,17 @@ for more information.
 
 {{% /box %}}
 
+Code for the info block:
+
+```text
+{{%/* box type="info" title="The title field is optional" */%}}
+
+This is an info box. The type can also be 'warning', 'danger' or 'exercise'.
+You can see it rendered below:
+
+{{%/* /box */%}}
+```
+
 Here is the end of an _info_ box.
 
 {{% box type="info" %}}
@@ -92,3 +103,16 @@ You can also activate animations between each frames.
 {{< gallery-img src="./resources/images/step3.png" desc="*Last* image" >}}
 
 {{< /gallery >}}
+
+Code for the gallery:
+
+```text
+(Set animation to false for no animation)
+{{</* gallery steps=3 animation="true"*/>}}
+
+{{</* gallery-img src="./resources/images/step1.png" desc="Image 1" */>}}
+{{</* gallery-img src="./resources/images/step2.png" desc="" */>}}
+{{</* gallery-img src="./resources/images/step3.png" desc="*Last* image" */>}}
+
+{{</* /gallery */>}}
+```

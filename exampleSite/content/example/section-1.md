@@ -25,9 +25,23 @@ something!
 What is yellow and wait? {{< spoiler >}}A lemon
 in an elevator{{</ spoiler >}}.
 
+The code used for the spoiler:
+
+```text
+{{</* spoiler */>}}
+Here is your spoiler
+{{</* /spoiler */>}}
+```
+
 ## Overview of a page
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum mi ligula, eu dictum purus feugiat in. Nam tempor et mi a pellentesque. Nunc aliquam interdum purus euismod scelerisque. {{% overview "/example_single/" %}}**This** text can be hovered{{% /overview %}}. Nulla nisl arcu, pellentesque vitae pellentesque a, fringilla eu nisi. Quisque semper, ligula vitae porta semper, neque ligula vulputate dolor, eu porttitor quam nunc eu nisi. Pellentesque vel metus libero. Vestibulum laoreet leo ut est porttitor aliquet. Duis ut magna tincidunt, porttitor ex sed, tempus eros. In pellentesque nibh ut scelerisque viverra. 
+
+The code used for the overview:
+
+```text
+{{%/* overview "link/to/a/post" */%}}
+```
 
 # Codeblocks
 
@@ -61,6 +75,22 @@ say [This is an example of scratch blocks]
 say [Go to the dedicated example if you want to know more]
 ```
 
+Syntax for the codeblocks:
+
+````text
+```python
+This is a python block
+```
+
+```python {nocopy=true}
+This is a python block without a copy button
+```
+
+```scratch
+This is a scratch block
+```
+````
+
 ## Codestep
 {{< codestep steps=4 lang="py" run="false" >}}
 
@@ -86,6 +116,23 @@ print("End of code")
 
 {{< /codestep >}}
 
+Code for the codestep:
+
+```text
+{{</* codestep steps=2 lang="text" run="false" */>}}
+
+{{</* codestep-block desc="First block description" */>}}
+This is the content of the first block.
+{{</* /codestep-block */>}}
+
+{{</* codestep-block desc="" */>}}
+This is the second block. It does not have a description. Since the first block
+has one, we have to add a 'desc' field.
+{{</* /codestep-block */>}}
+
+{{</* /codestep */>}}
+```
+
 ## Codestep with run button
 
 {{< codestep steps=3 lang="py" run="true" >}}
@@ -107,6 +154,19 @@ print("You answered:", answer)
 {{< /codestep >}}
 
 
+Code for the codestep:
+
+```text
+{{</* codestep steps=1 lang="text" run="true" */>}}
+
+{{</* codestep-block */>}}
+The only difference with the previous block, is that run is set to true
+{{</* /codestep-block */>}}
+
+{{</* /codestep */>}}
+```
+
+
 ## Interactive codeblocks
 
 ```codepython
@@ -123,4 +183,14 @@ print(input("This is an input, write what you want:"))
 </style>
 ```
 
+Syntax of executable blocks:
 
+````text
+```codepython
+This is an executable python block
+```
+
+```codehtml
+This is an interactive HTML block
+```
+````
