@@ -1,8 +1,31 @@
-<div class="highlight_box {{ .Get "type" }}">
+{{ if .IsNamedParams }}
+<div class="highlight_box {{ .Get "type" }}"
+  {{- if .Get "bgColor" -}}
+     style="background-color: {{- .Get "bgColor" -}};
+            {{- if .Get "titleColor" -}}
+                border-color: {{- .Get "titleColor" -}}
+            {{- end -}}
+            "
+  {{- end -}}
+  >
     {{- if .Get "title" -}}
-    <p class="title">
+    <p class="title"
+      {{- if .Get "titleColor" -}}
+         style="background-color: {{- .Get "titleColor" -}}"
+      {{- end -}}
+    >
     {{- .Get "title" | markdownify -}}
     </p>
     {{- end -}}
     {{ .Inner }}
 </div>
+{{ else }}
+<div class="highlight_box {{ .Get 0 }}">
+    {{- if .Get 1 -}}
+    <p class="title">
+    {{- .Get 1 | markdownify -}}
+    </p>
+    {{- end -}}
+    {{ .Inner }}
+</div>
+{{ end }}

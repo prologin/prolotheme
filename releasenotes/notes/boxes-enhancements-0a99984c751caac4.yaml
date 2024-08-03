@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Customize box shortcode with background and title colors
+upgrade:
+  - |
+    Allow the use of positional arguments in box shortcode

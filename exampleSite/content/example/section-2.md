@@ -15,7 +15,7 @@ matter in this section file.
 
 # Boxes
 
-{{% box type="info" title="A title _with_ **markdown**" %}}
+{{% box "info" "A title _with_ **markdown**" %}}
 
 It is possible to highlight some paragraphs using boxes. 
 The shortcode is the `box` with a mandatory parameter and an optional one.
@@ -27,7 +27,7 @@ for more information.
 Code for the info block:
 
 ```text
-{{%/* box type="info" title="The title field is optional" */%}}
+{{%/* box "info" "The title field is optional" */%}}
 
 This is an info box. The type can also be 'warning', 'danger' or 'exercise'.
 You can see it rendered below:
@@ -35,9 +35,19 @@ You can see it rendered below:
 {{%/* /box */%}}
 ```
 
+You can also label the parameters with `type=` and `title=` as shown below.
+
+```text
+{{%/* box type="info" title="The title field is optional" */%}}
+
+Here is an info box.
+
+{{%/* /box */%}}
+```
+
 Here is the end of an _info_ box.
 
-{{% box type="info" %}}
+{{% box "info" %}}
 
 An _info_ box without title.
 
@@ -80,6 +90,26 @@ An _exercise_ box with title.
 An _exercise_ box without title.
 
 {{% /box %}}
+
+## Custom colors
+
+{{% box type="info" title="A box with custom colors" bgColor="#C8B1F7" titleColor="#AA84F7" %}}
+
+You can create a box with custom colors using the `bgColor` and `titleColor` options.
+
+Note that you *need* to label the `title` and `type` parameters to use colors.
+
+{{% /box %}}
+
+Code used for the box shown above:
+
+```text
+{{%/* box type="info" bgColor="#C8B1F7" titleColor="#AA84F7" */%}}
+
+The `bgColor` and `titleColor` fields supports all named colors in CSS.
+
+{{%/* /box */%}}
+```
 
 # Gallery
 
