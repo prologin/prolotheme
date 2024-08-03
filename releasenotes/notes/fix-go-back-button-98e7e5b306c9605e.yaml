@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Make the "Return to menu" button actually go back to the menu

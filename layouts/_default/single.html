@@ -26,7 +26,7 @@
             {{ . | markdownify }}
         </div>
         {{ end }}
-        <a id="go-back-button" onclick="setupConfettis();" href='{{ relref .Page "." }}'>Retour au Menu</a>
+        <a id="go-back-button" onclick="setupConfettis();" href='{{ ref .Page "/" }}'>Retour au Menu</a>
     </article>
 </div>
 

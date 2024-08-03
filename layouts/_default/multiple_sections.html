@@ -55,7 +55,7 @@
                     {{ else }}
                     {{ (index $ContentSections $i).Content }}
                     {{ end }}
-                <a id="go-back-button" onclick="setupConfettis()" href='{{ relref $.Page "." }}'>Retour au Menu</a>
+                <a id="go-back-button" onclick="setupConfettis()" href='{{ ref $.Page "/" }}'>Retour au Menu</a>
 
                 {{ else }}
                 {{ (index $ContentSections $i).Content }}
