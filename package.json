@@ -1,7 +1,7 @@
 {
   "name": "contenus",
   "dependencies": {
-    "codemirror": "5.65.16",
+    "codemirror": "5.65.17",
     "grunt": "^1.6.1",
     "jquery": "^3.6.1",
     "lunr": "^2.3.9",
