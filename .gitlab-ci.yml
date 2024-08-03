@@ -10,7 +10,7 @@ build:
   interruptible: true
   needs: []
   image:
-    name: "node:21"
+    name: "node:22"
     entrypoint: [""]
   script:
     - make dependencies
