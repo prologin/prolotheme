@@ -14,7 +14,7 @@ function createCodeMirrorEditor(txtAreaNode, lang) {
         {
             mode: lang,
             lineNumbers: true,
-            tabSize: 4,
+            tabSize: 2,
             theme: "monokai",
         }
     );
