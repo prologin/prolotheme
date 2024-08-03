@@ -93,18 +93,20 @@ An _exercise_ box without title.
 
 ## Custom colors
 
-{{% box type="info" title="A box with custom colors" bgColor="#C8B1F7" titleColor="#AA84F7" %}}
+{{% box title="A custom box" icon="👋" bgColor="#C8B1F7" titleBg="#AA84F7" titleColor="white" %}}
 
-You can create a box with custom colors using the `bgColor` and `titleColor` options.
+If not type is specified, you can change the color and icon of the box manually.
 
-Note that you *need* to label the `title` and `type` parameters to use colors.
+You can change the colors using the `bgColor`, `titleBg` and `titleColor` options.
+The icon is changed with the `icon` option. The default boxes use emoji
+as icons.
 
 {{% /box %}}
 
 Code used for the box shown above:
 
 ```text
-{{%/* box type="info" bgColor="#C8B1F7" titleColor="#AA84F7" */%}}
+{{%/* box icon="👋" bgColor="#C8B1F7" titleBg="#AA84F7" titleColor="white" */%}}
 
 The `bgColor` and `titleColor` fields supports all named colors in CSS.
 

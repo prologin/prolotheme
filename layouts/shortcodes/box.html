@@ -1,26 +1,68 @@
 {{ if .IsNamedParams }}
+
+{{ if .Get "type" }}
+
 <div class="highlight_box {{ .Get "type" }}"
-  {{- if .Get "bgColor" -}}
-     style="background-color: {{- .Get "bgColor" -}};
-            {{- if .Get "titleColor" -}}
-                border-color: {{- .Get "titleColor" -}}
-            {{- end -}}
-            "
-  {{- end -}}
-  >
-    {{- if .Get "title" -}}
-    <p class="title"
-      {{- if .Get "titleColor" -}}
-         style="background-color: {{- .Get "titleColor" -}}"
-      {{- end -}}
+     {{- if not (.Get "title") -}}
+      style="border: none"
+     {{- end -}}
     >
+    {{- if .Get "title" -}}
+    <p class="title">
     {{- .Get "title" | markdownify -}}
     </p>
     {{- end -}}
     {{ .Inner }}
 </div>
+
 {{ else }}
-<div class="highlight_box {{ .Get 0 }}">
+
+<div class="highlight_box"
+  {{- if or (.Get "bgColor") (.Get "titleBg") -}}
+     style="
+            {{- if .Get "bgColor" -}}
+                background-color: {{- .Get "bgColor" -}};
+            {{- end -}}
+            {{- if .Get "titleBg" -}}
+                border-color: {{- .Get "titleBg" -}};
+            {{- end -}}
+            {{- if not (.Get "title") -}}
+                border: none;
+            {{- end -}}
+            "
+  {{- end -}}
+  >
+    {{- if .Get "title" -}}
+    <div class="title"
+       style="display: flex;
+              align-items: center;
+         {{- if .Get "titleBg" -}}
+            background-color: {{- .Get "titleBg" -}};
+         {{- end -}}
+         {{- if .Get "titleColor" -}}
+            color: {{- .Get "titleColor" -}};
+         {{- end -}}
+       "
+    >
+    {{- with .Get "icon" -}}
+    <span class="box-icon">{{ . }}</span>
+    {{- end -}}
+    {{- .Get "title" | markdownify -}}
+    </div>
+    {{- else -}}
+    {{- end -}}
+    {{ .Inner }}
+</div>
+
+
+{{ end }}
+
+{{ else }}
+<div class="highlight_box {{ .Get 0 }}"
+     {{- if not (.Get 1) -}}
+      style="border: none"
+     {{- end -}}
+  >
     {{- if .Get 1 -}}
     <p class="title">
     {{- .Get 1 | markdownify -}}

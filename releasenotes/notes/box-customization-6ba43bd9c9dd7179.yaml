@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Allow for box icon and title color change.
+upgrade:
+  - |
+    Remove the top border on boxes without title.
