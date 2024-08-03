@@ -106,6 +106,16 @@ pre.prolo-codepython-output {
     white-space: pre-wrap;
 }
 
+/*** html error ***/
+.prolo-codehtml-error {
+    background-color: #FF6161;
+    border-radius: 10px;
+    color: #000000;
+    padding: 1em;
+    text-align: center;
+    margin-top: 1em;
+}
+
 /*** scratch blocks ***/
 
 .blocks {

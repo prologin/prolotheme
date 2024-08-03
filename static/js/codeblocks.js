@@ -95,12 +95,25 @@ function createCodeMirrorEditor(txtAreaNode, lang) {
 
 // HTML code blocks
 (function (){
-    function runCodeHTML(inputCodeNode, outFrame) {
-        var code = inputCodeNode.getValue();
+    function renderHTML(htmlText, outFrame) {
+        const MAX_LENGTH = 20_000; // For easier changes
+
         var out = outFrame.contentWindow.document;
+        const error = document.querySelector(".prolo-codehtml-error");
         out.open();
         out.write("<!DOCTYPE html>"); // Added to shut up the "Quirks" warning.
-        out.write(code);
+
+        if (htmlText.length > MAX_LENGTH) {
+            outFrame.style.display = "none";
+            error.style.display = "block";
+            console.log(`Votre code est trop long, la taille maximum autorisée est ${MAX_LENGTH}. Votre code fait actuellement ${htmlText.length} caractères de long.`)
+            error.innerText = `Votre code est trop long, la taille maximum autorisée est ${MAX_LENGTH}. Votre code fait actuellement ${htmlText.length} caractères de long.`;
+        } else {
+            outFrame.style.display = "block";
+            error.style.display = "none";
+            out.write(htmlText);
+        }
+
         out.close();
     }
 
@@ -108,17 +121,16 @@ function createCodeMirrorEditor(txtAreaNode, lang) {
         console.log("initCodeBlock");
         const textArea = codeBlock.querySelector(".prolo-codeblock-input");
         const outFrame = codeBlock.querySelector(".prolo-codeblock-result");
-        const runBtn = codeBlock.querySelector(".prolo-codeblock-run-btn");
 
         // Replace the text-area with a CodeMirror block,
         // which includes line numbers and syntax highlighting.
         const codeMirror = createCodeMirrorEditor(textArea, "htmlmixed");
 
-        runBtn.addEventListener(
-            "click",
-            function() {runCodeHTML(codeMirror, outFrame);}
-        );
+        codeMirror.on("change", (codeMirror, change) => {
+            renderHTML(codeMirror.getValue(), outFrame)
+        });
 
+        renderHTML(codeMirror.getValue(), outFrame);
     }
 
     // Get all the HTML code blocks and initialize them,

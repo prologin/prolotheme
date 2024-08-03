@@ -1,12 +1,12 @@
 <div class="prolo-codeblock prolo-codehtml">
-    {{ markdownify "Appuie sur le bouton `Run` pour exécuter le code HTML ci-dessous" }}
+    {{ markdownify "Tu peux changer le texte ci-dessous pour voir le résultat dans la boîte blanche" }}
     <div class="prolo-codeblock-input-box" style="color: white; display: block">
         <textarea class="prolo-codeblock-input" cols="90" rows="5">
             {{- .Inner -}}
         </textarea>
-        <button class="prolo-codeblock-run-btn" type="button">Run</button>
     </div>
     Le résultat :
+    <div class="prolo-codehtml-error" style="display: none;">Il y a une erreur avec votre code.</div>
     <iframe
         class="prolo-codeblock-result"
     ></iframe>

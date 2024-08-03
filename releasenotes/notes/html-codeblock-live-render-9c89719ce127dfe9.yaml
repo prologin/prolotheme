@@ -1,0 +1,6 @@
+---
+prelude: >
+    Changed html codeblocks to a live preview.
+upgrade:
+  - |
+    Changed html codeblocks to a live preview with a limit of 20000 characters by default.
