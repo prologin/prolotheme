@@ -39,7 +39,7 @@ clean_dependencies:
 	rm -rf static/js/tex-svg.js
 	rm -rf static/js/lunr.min.js
 
-given_resources: SHELL := /bin/bash
+given_resources: SHELL := /bin/sh
 given_resources:
 	# This script create zip files if 
 	# there is multiple given resources

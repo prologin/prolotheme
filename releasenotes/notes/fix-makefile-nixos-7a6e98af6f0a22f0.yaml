@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Changed use of `/bin/bash` to `/bin/sh` for `make` to work on nixos.
