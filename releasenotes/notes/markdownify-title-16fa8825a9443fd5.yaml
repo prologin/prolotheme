@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    - Markdownify menu title
+    - Make inline code blocks transparent instead of always grey.

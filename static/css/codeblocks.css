@@ -20,8 +20,8 @@
 }
 
 code:not(pre>code) {
-    background-color: #cecece;
-    border: 1px solid #BCBEC0;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.21);
     border-radius: 5px;
     font: .75em Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     padding: 1px;

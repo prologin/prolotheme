@@ -43,7 +43,7 @@ header.site-header {
         {{ end }}
 
         <div class="article-item-title">
-            <h2>{{ .Title }}</h2>
+            <h2>{{ .Title | markdownify }}</h2>
         </div>
 
         {{ if (not .Site.Params.Style.hideTags) }}

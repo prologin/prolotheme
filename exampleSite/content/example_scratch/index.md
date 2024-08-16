@@ -1,5 +1,5 @@
 ---
-title: "Example Scratchblocks"
+title: "Example `Scratchblocks`"
 weight: 1
 authors: ["Prologin"]
 description: A guide on how to write scratch blocks
