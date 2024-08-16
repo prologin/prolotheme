@@ -10,8 +10,10 @@
 {{- .Scratch.Set "id" 0 -}}
 {{- .Scratch.Set "lineOff" 1 -}}
 <pre class="codestep-pre">
+    <div class="codestep-scrollbox">
     <div class="codestep-content {{ .Get "lang" }}">
     {{- .Inner -}}
+    </div>
     </div>
 </pre>
 

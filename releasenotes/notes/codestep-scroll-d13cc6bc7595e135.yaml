@@ -1,0 +1,7 @@
+---
+upgrade:
+  - |
+    Make codesteps content scrollable
+fixes:
+  - |
+    Show codestep copy button in front of the content
