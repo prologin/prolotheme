@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Remove pushd command from makefile to make it work with `sh`
